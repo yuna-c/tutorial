@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6</title>
+    <link rel="stylesheet" href="./css/reset.css">
+</head>
+<body>
+    <div class="wrap">
+
+        <h1>Javascript es6</h1>
+
+        <div class="code-info">
+            <h2><strong>console.log</strong></h2>
+            <ul class="code-list">
+                <li><a href="console/example1.js" target="_blank">console.log</a></li>
+            </ul>
+        </div>
+
+        <div class="code-info">
+            <h2><strong>변수와 상수</strong></h2>
+            <ul class="code-list">
+                <li>변수(variable) : 특정 이름에 특정 값을 담는것 -&gt; 선언</li>
+                <li><a href="variable/example1.js" target="_blank">variable,constant</a></li>
+                <li><a href="variable/example2.js" target="_blank">변수</a></li>
+            </ul>
+        </div>
+
+        <div class="code-info">
+            <h2><strong>연산자</strong></h2>
+            <ul class="code-list">
+                <li><a href="operator/example1.js" target="_blank">산술 연산자</a></li>
+                <li><a href="operator/example2.js" target="_blank">대입 연산자</a></li>
+                <li><a href="operator/example3.js" target="_blank">논리 연산자</a></li>
+                <li><a href="operator/example4.js" target="_blank">비교 연산자</a></li>
+                <li><a href="operator/example5.js" target="_blank">대소 관계</a></li>
+                <li><a href="operator/example6.js" target="_blank">문자열 붙이기</a></li>
+            </ul>
+        </div>
+        <pre>
+            <code>
+// 1 산술 연산자
+let c = 1;
+console.log(c++);
+console.log(c);
+console.log(++c);
+console.log(c--);
+console.log(c);
+
+
+
+// 2 대입 연산자
+let a = 1;
+a += 1; //a에 1을 더하겠다
+a -= 3;
+a *= 3;
+a /= 3;
+console.log(a);
+
+
+
+// 3 논리 연산자
+// 1.NOT !
+let a = !true;
+console.log(a);
+
+// 2.AND && 둘 다 참일때
+a = true && true;
+console.log(a);
+
+// 3.OR || 둘중 하나 트루
+a = true || false;
+console.log(a);
+
+
+
+// 4 비교 연산자
+const a = 'a';
+const b = 'b';
+const equals = a === b;
+const notEquals = a !== b;
+console.log(equals);
+console.log(notEquals);
+
+
+
+// 5 대소 관계
+console.log(a &lt; b); // a가 b보다 작다
+console.log(b &gt; a); // b가 a보다 크다
+console.log(b &gt;= a); // b가 a보다 크거나 같다
+console.log(a &lt;= c); // a가 c보다 작거나 같다
+console.log(b &lt; c); // b가 c보다 작다
+
+
+
+// 6 문자열 붙이기
+const a = '안녕';
+const b = '하세요';
+const c = '❤';
+
+console.log (a + b + c);
+            </code>
+        </pre>
+
+        <div class="code-info">
+            <h2><strong>conditional</strong></h2>
+            <ul class="code-list">
+                <li>조건문</li>
+                <li><a href="conditional/example1.js" target="_blank">if</a></li>
+                <li><a href="conditional/example2.js" target="_blank">if else</a></li>
+                <li><a href="conditional/example3.js" target="_blank">if else if</a></li>
+                <li><a href="conditional/example4.js" target="_blank">switch case</a></li>
+            </ul>
+        </div>
+        <pre>
+            <code>
+// 1 if문
+const a = 1;
+if( a + 1 === 2 ) {// true
+    //console.log('a + 1이 2입니다.');
+    //console.log('fsdaffsfasdfaff')
+    const a = 2;
+    console.log('if문 안의 a값은 '+ a);
+}
+console.log('if문 밖의 a값은 '+ a);
+    
+
+
+// 2 if else
+// 특정 조건이 만족 했을때 이걸 하고 , 만약에 만족 안하면 다른거 하고
+
+const a = 10;
+if(a > 15) {
+    console.log('a가 15보다 큽니다');
+} else {
+    console.log('a가 15보다 크지 않습니다');
+}
+
+
+
+// 3 if else if
+// 특정 조건이 만족 했을때 이걸 하고 , 만약에 만족 안하면 다른거 하고, 마지막을 실행(조건을 만족했을 때 까지 실행)
+
+const a = 7;
+if(a === 5) {
+    console.log('a가 5입니다.');
+} else if( a === 10) {
+    console.log('a가 10입니다.');
+} else if(a === 7 ) {
+    console.log('a가 7입니다.');
+} else {
+    console.log('5도 아니고 10도 아닙니다.');
+}
+
+
+
+// 4 switch case 
+const device = 'galaxy note';
+
+switch (device) {
+    case 'iphone':
+        console.log('아이폰');
+        break;
+    case 'ipad':
+        console.log('아이패드');
+        break;
+    case 'galaxy note':
+        console.log('갤럭시 노트');
+        break;
+    default: //아무것도 해당하지 않을때
+        console('모르겠네요');
+}
+            </code>
+        </pre>
+
+        <div class="code-info">
+            <h2><strong>funtion</strong></h2>
+            <ul class="code-list">
+                <li><a href="function/example1.js" target="_blank">함수</a></li>
+                <li><a href="function/example2.js" target="_blank">Template Literal</a></li>
+                <li><a href="function/example3.js" target="_blank">example</a></li>
+                <li><a href="function/example4.js" target="_blank">arrow function</a></li>
+            </ul>
+        </div>
+        <pre>
+            <code>
+// 1 function
+function add(a, b){ //파라미터 설정(인풋 값) = 인자
+    return a + b;
+}
+
+const sum = add(1, 2);
+console.log(sum);
+
+//function 으로 선언, 함수이름은 키워드 뒤에 (파라미터, 인자) = 함수에서 받아오는 값 return으로 반환
+
+
+function hello(name) {
+    console.log('Hello ' + name + ' ❤');
+}
+
+hello('Yuna');
+
+
+
+// 2 ``
+function hello(name) { //파라미터
+    // console.log(`hello ${name} ❤`);
+    return `hello ${name} ❤`;
+    // retrun 이 사용되는 순간 종료됨
+}
+
+// hello('nana');
+const result = hello('nana');
+console.log(result);
+
+
+
+// 3 example
+function getGrade(score) {
+    if (score === 100) {
+        return 'A+';
+    } else if (score >= 90) { //크거나 같으면
+        return 'A';
+    } else if (score === 89) {
+        return 'B+';
+    } else if (score >= 80) {
+        return 'B';
+    } else if (score === 79) {
+        return 'C+';
+    } else if (score >= 70) {
+        return 'C';
+    } else if (score === 69) {
+        return 'D+';
+    } else if (score >= 60) {
+        return 'D';
+    } else {
+        return 'F';
+    }
+}
+
+const grade = getGrade(10);
+console.log(grade);
+
+
+
+// 4 arrow 
+// const add = (a, b) => {
+//     return a + b;
+// }
+// const sum = add(1, 3);
+// console.log(sum);
+
+
+const minus = (a, b) =>{
+    return a - b;
+}
+const min = minus(6, 1);
+console.log(min);
+
+
+const hello = (name) => {
+    console.log(`Hello, ${name} 😂`);
+}
+hello('yuna');
+
+//arrow => 함수 내부에서 바로 값을 reture
+const add = (a, b) =>  a + b;
+const sum = add(1, 3);
+console.log(sum);
+            </code>
+        </pre>
+
+        <div class="code-info">
+            <h2><strong>object</strong></h2>
+            <ul class="code-list">
+                <li>하나의 이름에 여러종류의 값을 넣을 수 있게 해줌</li>
+                <li><a href="object/example1.js" target="_blank">객체</a></li>
+                <li><a href="object/example2.js" target="_blank">객체 받아오기</a></li>
+                <li><a href="object/example3.js" target="_blank">비 구조화 할당/ 객체 구조 분해</a></li>
+                <li><a href="object/example4.js" target="_blank">객체 안에 함수 넣기</a></li>
+                <li><a href="object/example5.js" target="_blank">getter</a></li>
+                <li><a href="object/example6.js" target="_blank">setter</a></li>
+                <li><a href="object/example7.js" target="_blank">getter, setter 활용</a></li>
+                <li>getter : 특정 값을 조회할 때마다 어떤 함수를 호출</li>
+                <li>setter : 특정 값을 설정할 때마다 value를 파라미터로 받아와서 값, 코드 실행</li>
+            </ul>
+        </div>
+        <pre>
+            <code>
+// 1 객체
+const cat = {
+    name : '나나',
+    age : 2,
+    color : 'white',
+    cute : true,
+    sample : {
+        a: 1,
+        b: 2,
+    },
+    key : '키값',
+    'key of value' : 'abcd'
+}
+
+console.log(cat, typeof cat);
+console.log(cat.name);
+
+
+
+// 2 객체 받아오기
+const ironMan = {
+    name : '토니 스타크',
+    actor : '로버트 다우니 주니어',
+    alias : '아이언맨',
+}
+
+const captainAmerica = {
+    name : '스티븐 로저스',
+    actor : '크리스 에반스',
+    alias : '캡틴 아메리카',
+}
+
+const blackWidow = {
+    name : '나탈리야 알리야노브나 로마노바',
+    actor : '스칼렛 요한슨',
+    alias : '블랙 위도우'
+}
+
+console.log(ironMan);
+console.log(captainAmerica);
+
+
+// 함수의 파라미터에서도 객체를 받아와 사용 할 수 있다.
+
+function print(hero) { //파라미터 = 히어로
+    const text = `${hero.alias}(${hero.name}) 역할을 맡은 배우는 ${hero.actor} 입니다.` ;
+    //const text = `${hero.arias}(${hero.name}) 역할을 맡은 배우는 ${hero.actor} 입니다❤`;
+    console.log(text);
+}
+
+print(ironMan);
+print(captainAmerica);
+print(blackWidow);
+
+
+
+// 3 비구조화 할당
+const ironMan = {
+    name : '토니 스타크',
+    actor : '로버트 다우니 주니어',
+    alias : '아이언맨',
+    age : '36',
+}
+
+//비구조화 할당
+const { name } = ironMan;
+console.log(name);
+
+const captainAmerica = {
+    name : '스티븐 로저스',
+    actor : '크리스 에반스',
+    alias : '캡틴 아메리카',
+    age : '36',
+}
+
+const blackWidow = {
+    name : '나탈리야 알리야노브나 로마노바',
+    actor : '스칼렛 요한슨',
+    alias : '블랙 위도우',
+    age : '36',
+}
+
+// 객체 비구조화 문법 
+// 객체에서 특정 값들을 추출해 내는 것
+
+function print(/*hero*/ {alias, name, actor, age}) { //파라미터 = 히어로
+    //const { alias, name, actor, age } = hero;
+        const text = `${alias}(${name}) 역할을 맡은 배우는 ${actor} 입니다❤ 나이는 ${age}살 입니다❤` ;
+    console.log(text);
+}
+
+print(ironMan);
+print(captainAmerica);
+print(blackWidow);
+
+
+
+// 4 객체 안에 함수 넣기
+const dog = {
+    name : '멍멍이',
+    sound : '멍멍!',
+    say() { //: function say 생략가능
+        console.log(this.sound); // this 자기가 속해지는 곳
+    }
+    /* 화살표 함수는 작동 안함 undefined
+    say : () => { 
+        console.log(this.sound);
+    } 
+    */
+};
+
+dog.say();
+
+
+const cat = {
+    name : '나나',
+    sound : '야옹~',
+    // say가 등록이되는거고 sound가 호출이 됨, this = cat
+}
+
+cat.say = dog.say;
+cat.say();
+
+//undefined( 매체 X )
+const catSay = cat.say;
+catSay();
+
+
+
+// 5 getter
+// 객체 안에 getter,setter함수를 설정할 수 있음
+const numbers = {
+    a : 1,
+    b : 2,
+    get sum() { //get은 꼭 return 해야함, 조회시
+        console.log('sum 함수가 실행됩니다');
+        return this.a + this.b;
+    }
+};
+
+// numbers.a = 5;
+// console.log(numbers.a);
+// console.log(numbers);
+console.log(numbers.sum);
+numbers.b = 5;
+console.log(numbers.sum);
+
+
+
+// 6 setter
+const dog = {
+    _name: '멍멍이', //setter함수와 겹치지 않게 만들기 위해
+    get name() {
+        console.log('_name을 조회합니다');
+        return this._name;
+    },
+    set name(value) { //파라미터를 무조건 설정해 줘야함
+        console.log('이름이 바뀝니다.' + value);
+        this._name = value;
+    }
+};
+
+// console.log(dog._name);
+// dog._name = '냐옹이';
+// console.log(dog._name);
+
+console.log(dog.name);
+dog.name = '냐옹이';
+console.log(dog.name);
+
+
+
+// 7 활용
+const numbers = {
+    _a : 1,
+    _b : 2,
+    sum : 3,
+    calculate() {
+        console.log('calculate');
+        this.sum = this._a + this._b;
+    },
+    // setter함수에서 calculate 함수를 호출
+    get a(){
+        return this._a;
+    },
+    get b(){
+        return this._b;
+    },
+    set a(value) {
+        this._a = value;
+        //함수 업데이트
+        this.calculate();
+    },
+    set b(value) {
+        this._b = value;
+        this.calculate();
+    }
+};
+
+console.log(numbers.sum);
+numbers.a = 5; 
+numbers.b = 7;
+numbers.a = 9; // 값이 바뀔때마다 조회
+console.log(numbers.sum);
+console.log(numbers);
+
+
+const number = { //sum 이 조회할 때 마다 호출됨
+    a : 1,
+    b : 2,
+    get sum(){
+        console.log('sum');
+        return this.a + this.b;
+    }
+};
+
+console.log(number.sum);
+number.a = 5; 
+number.b = 7;
+number.a = 9; 
+console.log(number.sum);
+console.log(number.sum);
+console.log(number.sum);
+console.log(number.sum);
+console.log(number);
+            </code>
+        </pre>
+
+        <div class="code-info">
+            <h2><strong>array</strong></h2>
+            <ul class="code-list">
+                <li><a href="array/example1.js" target="_blank">배열</a></li>
+                <li><a href="array/example2.js" target="_blank">객체로 만들어진 배열</a></li>
+                <li><a href="array/example3.js" target="_blank">배열의 크기 알기</a></li>
+                <li><a href="array/example4.js" target="_blank">배열 예제</a></li>
+            </ul>
+        </div>
+        <pre>
+            <code>
+// 1 배열
+// : 여러개의 항목들이 있는 리스트 [0, 1, 2, 3]
+
+/*
+(
+    {
+        [
+            
+        ]
+    }
+)
+*/
+
+const array = [1,2,3,'abac', {}];
+console.log(array);
+console.log(array[0]);
+console.log(array[7]);
+
+
+
+// 2 객체로 이루어진 배열
+const objects = [
+    {name : '나나', age : '5', animal : 'cat' },
+    {name : '야옹이',}
+];
+
+console.log(objects);
+console.log(objects[0]);
+console.log(objects[1]);
+
+//배열 내장함수 push
+objects.push({
+    name : '멍뭉이'
+});
+
+console.log(objects);
+
+
+
+// 3 객체의 크기
+const objects = [
+    {name : '야옹이', age : '5', animal : 'cat' },
+    {name : '다람이'},
+    {name : '뭉뭉이'}
+];
+
+objects.push({name : '징징이'});
+
+console.log(objects);
+console.log(objects.length);
+
+
+
+// 4 배열 예제
+const array = [ 1, true, { a : 1 }, [1, 2, 3, 4] ];
+
+array.push('냥냥이');
+
+console.log(array[4]);
+console.log(array);
+console.log(array.length);
+            </code>
+        </pre>
+
+        <div class="code-info">
+            <h2><strong>iteration</strong></h2>
+            <ul class="code-list">
+                <li>
+                    <div class="img-box">
+                        <img src="https://raw.githubusercontent.com/yuna-c/es6/master/img/for.PNG" alt="">
+                    </div>
+                </li>
+                <li><a href="iteration/example1.js" target="_blank">반복문 for</a></li>
+                <li><a href="iteration/example2.js" target="_blank">for + 배열</a></li>
+                <li><a href="iteration/example3.js" target="_blank">while</a></li>
+                <li><a href="iteration/example4.js" target="_blank">for of</a></li>
+                <li><a href="iteration/example5.js" target="_blank">객체의 정보 받아오기</a></li>
+                <li><a href="iteration/example6.js" target="_blank">for in</a></li>
+                <li><a href="iteration/example7.js" target="_blank">break, continue</a></li>
+                <li><a href="iteration/example8.js" target="_blank">example</a></li>
+            </ul>
+        </div>
+        <pre>
+            <code>
+// 1 반복문 : 특정한 조건이 만족하는동안 계속 돌리다가 조건이 만족되지 않으면 끝낸다
+
+//for
+for (let i = 0; i &lt; 10; i++) {
+    console.log('i가 10보다 작을 때 까지 반복' + i)
+}
+
+for (let j = 10; j &gt;= 0; j--) {
+    console.log('j가 0보다 클 때 까지 반복' + j)
+}
+
+for (let k = 10; k &gt;= 0; k-=2) {
+    console.log('k가 0보다 클 때 까지 2씩 빼며 반복' + k)
+}
+
+
+
+// 2 for + 배열
+const names = ['멍멍이', '야옹이', '다람이', '멍뭉이'];
+
+for (let i = 0; i &lt; names.length; i++) { //names.length i가 배열의 length보다 작을 떄
+    console.log(names[i]);
+}     
+
+
+
+// 3  while
+let i = 0; 
+let isFun = false;
+
+// while(i < 10){
+//     console.log(i);
+//     i++;
+// }
+
+
+while(!isFun){ // false일때는 계속 반복해라 isFun === false
+    console.log(i);
+    i++;
+    if(i === 30){
+        isFun = true;
+    }
+}
+
+
+
+// 4 for of 
+// 배열 반복문
+const nums = [5, 10, 15, 20];
+const numbers = [10, 20, 30, 40, 50];
+
+for (let number of numbers){
+    console.log(number);
+}
+
+for (let num of nums){ //num일 필요는 없다
+    console.log(num);
+}
+
+// for... of 는 배열안에 있는 것들을 사용해서 어떠한 작업을 해야할 때 쓴다
+
+for (let i = 0; i < nums.length; i++){
+    console.log(nums[i]);
+}
+
+
+// 5 객체 정보 받아오기
+const numbers = [10, 20, 30, 40, 50];
+
+const doggy = { 
+    name : '멍멍이',
+    sound : '멍멍',
+    age : 2
+}
+
+console.log(Object.keys(doggy));
+console.log(Object.values(doggy));
+console.log(Object.entries(doggy));
+
+
+
+// 6 for in 
+const doggy = { 
+    name : '멍멍이',
+    sound : '멍멍',
+    age : 2
+}
+
+for (let key in doggy){
+    console.log(key); // keys값이 나타남, Object.keys(doggy)
+    console.log(`${key}: ${doggy[key]}`);
+}
+
+
+
+// 7 break continue
+for (i = 0; i < 10 ; i++){
+    if ( i === 2 ) continue;  // 그 다음거
+    console.log(i);
+    if ( i === 5 ) break;  // 끝나는 거
+}
+
+
+// 8
+function sumOf(numbers) { // 파라미터로 숫자 배열 가져옴
+    let sum = 0; 
+    for (let i = 0; i < numbers.length; i++){
+        sum += numbers[i];
+    }
+    return sum;
+}
+
+const result = sumOf([1, 2, 3, 4, 5]);
+console.log(result);
+
+
+
+// 배열을 만들어서 3보다 큰 숫자를 넣어라
+function biggerThanThree(numbers) {
+    const array = [];
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] > 3) {
+        array.push(numbers[i]);
+        }
+    }
+    return array;
+}
+
+const numbers = [1, 2, 3, 4, 5, 6, 7];
+console.log(biggerThanThree(numbers)); // [4, 5, 6, 7]
+
+// export default biggerThanThree;
+
+
+            </code>
+        </pre>
+
+        <div class="code-info">
+            <h2><strong>배열 내장함수</strong></h2>
+            <ul class="code-list">
+                <li><a href="arrays/example1.js" target="_blank">forEach</a></li>
+                <li><a href="arrays/example2.js" target="_blank">map</a></li>
+                <li><a href="arrays/example3.js" target="_blank">indexOf, findIndex, find</a></li>
+                <li><a href="arrays/example4.js" target="_blank">fillter</a></li>
+                <li><a href="arrays/example5.js" target="_blank">splice</a></li>
+                <li><a href="arrays/example6.js" target="_blank">slice</a></li>
+                <li><a href="arrays/example7.js" target="_blank">shift</a></li>
+                <li><a href="arrays/example8.js" target="_blank">pop</a></li>
+                <li><a href="arrays/example9.js" target="_blank">unshift</a></li>
+                <li><a href="arrays/example10.js" target="_blank">push</a></li>
+                <li>push(맨 뒤 원소 추가) pop(맨 뒤 원소 제거) . unshift(맨 앞 원소 추가) shift(맨 앞 원소 제거)</li>
+                <li><a href="arrays/example11.js" target="_blank">concat</a></li>
+                <li><a href="arrays/example12.js" target="_blank">join</a></li>
+                <li><a href="arrays/example13.js" target="_blank">reduce</a></li>
+                <li><a href="arrays/example14.js" target="_blank">reduce example</a></li>
+                <li><a href="arrays/example15.js" target="_blank">exam</a></li>
+            </ul>
+        </div>
+        <pre>
+            <code>
+// 1 forEach
+$ node example1.js
+[ '아이언맨', '캡틴 아메리카', '토르', '닥터 스트레인지', '블랙 위도우' ]
+[ '아이언맨', '캡틴 아메리카', '토르', '닥터 스트레인지', '블랙 위도우', '헐크', '비전' ]
+아이언맨
+캡틴 아메리카
+토르
+닥터 스트레인지
+블랙 위도우
+헐크
+비전
+
+
+
+// 2 map
+$ node example2.js
+[
+   1,  4,  9, 16,
+  25, 36, 49, 64
+]
+[ 'hello', 'bye' ]
+
+
+
+// 3 indexOf, findIndex, find
+$ node example3.js
+3
+1
+text : 1 번째, done : 3번째, ID : 3 object
+{ id: 1, text: '자바스크립트 입문', done: true }
+
+
+
+// 4 fillter
+// fillter : 특정 조건을 만족하는 원소들을 찾아서, 그 원소들을 가지고 새로운 배열을 만드는 것
+$ node example4.js
+[ { id: 4, text: '배열 내장함수 배우기', done: false } ]
+[
+  { id: 1, text: '자바스크립트 입문', done: true },
+  { id: 2, text: '함수 배우기', done: true },
+  { id: 3, text: '객체와 배열 배우기', done: true }
+]
+
+
+
+// 5 splice
+$ node example5.js
+//splice = 배열에서 특정 항목을 제거할 때 사용(해당 원소가 몇번째인지 명시)
+[ 30 ]
+[ 10, 20 ]
+
+
+
+// 6 slice
+$ node example6.js
+//slice : 기존의 배열을 건드리지않고 파라미터에 넣는 값도 다르다, 배열을 찾아낼 때 사용
+[ 10, 20 ]
+[ 10, 20, 30, 40 ]
+
+
+
+// 7 shift
+$ node example7.js
+// shift : 배열의 첫번째 원소를 추출 => 비워져 있을 때까지 빠짐
+10
+[ 20, 30, 40 ]
+
+
+
+// 8 pop
+$ node example8.js
+// pop : 맨 끝자리 원소를 찾아서 빼줌
+40
+[ 10, 20, 30 ]
+
+
+
+// 9 unshift
+$ node example9.js
+// unshift : 원소의 맨 앞에 요소를 추가
+[ 5, 10, 20, 30, 40 ]
+
+
+
+// 10 push
+$ node example10.js
+// push : 맨 뒤에 원소 추가
+[ 10, 20, 30, 40, 50 ]
+
+
+
+// 11 concat
+// concat : 여러개의 배열을 하나의 배열로 합쳐주는 역할
+$ node example11.js
+[ 1, 2, 3 ]
+[ 4, 5, 6 ]
+[ 1, 2, 3, 4, 5, 6 ]
+
+
+// 12 join
+// join : 배열 안에 있는 값들을 문자열 형태로 합쳐 줄 때 사용한다
+$ node example12.js
+1,2,3,4,5,6
+1파라미터2파라미터3파라미터4파라미터5파라미터6
+1, 2, 3, 4, 5, 6
+
+
+// 13 reduce
+$ node example13.js
+// reduce : 배열이 주워졌을 때, 배열안의 모든 값들을 사용하여 어떤 값들을 연산해야될 때 사용
+15
+3
+
+
+// 14 reduce 다른예제 
+$ node example14.js
+{ a: 3, b: 1, c: 1, d: 1, e: 1 }
+
+            </code>
+        </pre>
+
+        <div class="code-info">
+            <h2><strong>프로토타입과 플래스</strong></h2>
+            <ul class="code-list">
+                <li><a href="prototype/example1.js" target="_blank">프로토타입</a></li>
+                <li><a href="prototype/example2.js" target="_blank">객체 생성자 상속받기 call</a></li>
+                <li><a href="prototype/example3.js" target="_blank">class</a></li>
+                <li><a href="prototype/example4.js" target="_blank">example</a></li>
+            </ul>
+        </div>
+        <pre>
+            <code>
+// 1 프로토타입
+/*
+객체 생성자 :
+함수를 통해 새로운 객체를 만들고,
+그 안에 넣고싶은 값, 또는 함수를 구현할 수 있게 해줍니다.
+*/
+$ node example1.js
+멍멍
+냐옹
+암컷
+
+// 2 객체 생성자 상속받기
+$ node example2.js
+//프로토타입 Say 함수 집어 넣어줬고
+//call이라는 함수로 재사용할 대상을 불러준다
+멍멍
+냐옹
+
+
+// class : 반복되는 문장들을 간략한 문장으로 알기 쉽게 쓸 수 있게 해줌, 상속을 훨씬 더 쉽게 할 수 있게 해줌
+
+class Animal {
+    //객체 생성자 비슷한 것 = 생성자
+    constructor(type, name, sound) {
+        this.type = type;
+        this.name = name;
+        this.sound = sound;
+    }
+    // say라는 함수를 class안에 구현 = 자동으로 프로토타입으로 등록이 됨
+    say() {
+        console.log(this.sound);
+
+    }
+}
+
+// extend : 특정 키워드 상속 
+class Dog extends Animal {
+    constructor(name, sound){
+        super('개', name, sound); //자기가 상속받은 클래스의 constroctor을 상속해줌
+    }
+}
+
+class Cat extends Animal {
+    constructor(name, sound){
+        super('고양이', name, sound);
+    }
+}
+
+console.log(Animal.prototype.say); // 자동 생성
+
+const dog = new Dog('멍멍이', '멍');
+const cat = new Cat('고양이', '야옹');
+const fly = new Cat('fly', 'fly to the moon');
+
+dog.say();
+cat.say();
+fly.say();
+
+
+class Food {
+    constructor(name) {
+        this.name = name;
+        this.brands = [];
+    }
+    addBrand(brand) {
+        this.brands.push(brand);
+    }
+    print() {
+        console.log(`${this.name} 를(을) 파는 음식점들:`)
+        console.log(this.brands.join(', '));
+    }
+}
+
+const pizza = new Food('피자');
+pizza.addBrand('피자헛');
+pizza.addBrand('도미노 피자');
+
+const chicken = new Food('치킨');
+chicken.addBrand('굽네치킨');
+chicken.addBrand('BBQ');
+
+pizza.print();
+chicken.print();
+            </code>
+        </pre>
+<!-- 
+    <div class="code-info">
+        <h2><strong></strong></h2>
+        <ul class="code-list">
+            <li></li>
+        </ul>
+    </div>
+    <pre>
+        <code>
+        </code>
+    </pre>
+-->
+
+    </div>
+</body>
+</html>

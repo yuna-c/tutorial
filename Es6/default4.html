@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML과 javascript 연동</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/default.css">
+</head>
+<body>
+    <div class="wrap">
+
+        <h1>HTML과 javascript 연동</h1>
+
+        <div class="code-info">
+            <h2><strong>카운터 만들기</strong></h2>
+            <ul class="code-list">
+                <li>
+                    <div class="img-box">
+                        <h2 id="number">0</h2>
+                        <div>
+                            <button id="increase">+1</button>
+                            <button id="decrease">-1</button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <style>
+                        form { margin:50px 0; box-sizing:border-box; }
+                        .value-button { width:40px; height:40px; line-height:38px; margin:0; display:inline-block; background:#eee; border:1px solid #ddd; text-align:center; box-sizing:border-box; -webkit-touch-callout:none; -webkit-user-select:none; -khtml-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; }
+                        .value-button:hover { cursor:pointer; }
+                        form #decrease { margin-right:-4px; border-radius:8px 0 0 8px; }
+                        form #increase { margin-left:-4px; border-radius:0 8px 8px 0; }
+                        form #input-wrap { margin:0; padding:0; }
+                        input#number1 { width:40px; height:40px; margin:0; margin-top:2px; text-align:center; border:none; border-top:1px solid #ddd; border-bottom:1px solid #ddd; box-sizing:border-box; }
+                        input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { margin:0; -webkit-appearance:none; }
+                    </style>
+                    <form>
+                        <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                        <input type="Number" id="number1" value="0" />
+                        <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                    </form>
+                </li>
+                <li><a href="example/example1.js" target="_blank">getElementById</a></li>
+                <li><a href="example/example2.js" target="_blank">querySelector</a></li>
+                <li><a href="example/example4.js" target="_blank">codepen</a></li>
+            </ul>
+        </div>
+        <script src="./example/example1.js"></script>
+        <script src="./example/example4.js"></script>
+        <pre>
+            <code>
+const number = document.getElementById('number');
+const increase = document.getElementById('increase');
+const decrease = document.getElementById('decrease');
+
+console.log(number.innerText);
+console.log(increase.offsetTop);
+console.log(decrease.id);
+
+//이벤트 설정하기
+increase.onclick = () => {
+    const current = parseInt(number.innerText, 10);
+    // parseInt 문자열을 숫자로 변환, 몇진수로 진행할 것인가
+    // console.log('increase가 클릭됨');
+    number.innerText = current + 1;
+}
+
+// increase.onchange = () => {} 인풋 값을 바꿀 때 사용
+
+decrease.onclick = () => {
+    // console.log('decrease가 클릭됨');
+    const current = parseInt(number.innerText, 10);
+    number.innerText = current - 1;
+}
+
+
+
+
+const number = document.getElementById('number');
+const buttons = document.querySelectorAll('button'); //태그이름 찾기
+const [increase, decrease] = buttons; //추출하기
+
+console.log(number.innerText);
+console.log(buttons);
+
+//이벤트 설정하기
+increase.onclick = () => {
+    const current = parseInt(number.innerText, 10);
+    // parseInt 문자열을 숫자로 변환, 몇진수로 진행할 것인가
+    // console.log('increase가 클릭됨');
+    number.innerText = current + 1;
+}
+
+// increase.onchange = () => {} 인풋 값을 바꿀 때 사용
+
+decrease.onclick = () => {
+    // console.log('decrease가 클릭됨');
+    const current = parseInt(number.innerText, 10);
+    number.innerText = current - 1;
+}
+
+
+
+function increaseValue() {
+    var value = parseInt(document.getElementById('number1').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    document.getElementById('number1').value = value;
+  }
+
+function decreaseValue() {
+var value = parseInt(document.getElementById('number1').value, 10);
+value = isNaN(value) ? 0 : value;
+value < 1 ? value = 1 : '';
+value--;
+document.getElementById('number1').value = value;
+}
+            </code>
+        </pre>
+
+        <div class="code-info">
+            <h2><strong>모달 만들기</strong></h2>
+            <ul class="code-list">
+                <li>
+                    <div class="img-box">
+                        <h2>안녕하세요</h2>
+                        <p>내용내용내용</p>
+                        <button id="open">모달 열기</button>
+                    </div>
+
+                    <div class="modal-wrapper" style="display:none;">
+                        <div class="modal">
+                            <div class="modal-title">안녕하세요</div>
+                            <div class="modal-body">
+                                <p>모달내용은 어쩌고 저쩌고 어쩌고...</p>
+                            </div>
+                            <div class="close-wrapper">
+                                <button id="close">닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="example/example3.js" target="_blank">modal</a></li>
+            </ul>
+        </div>
+        <script src="./example/example3.js"></script>
+
+        <pre>
+            <code>
+const open = document.getElementById("open");
+const close = document.getElementById("close");
+const modal = document.querySelector(".modal-wrapper");
+
+open.onclick = () => {
+    modal.style.display = "flex";
+};
+close.onclick = () => {
+    modal.style.display = "none";
+};
+            </code>
+        </pre>
+<!-- 
+    <div class="code-info">
+        <h2><strong></strong></h2>
+        <ul class="code-list">
+            <li></li>
+        </ul>
+    </div>
+    <pre>
+        <code>
+        </code>
+    </pre>
+-->
+
+    </div>
+</body>
+</html>
