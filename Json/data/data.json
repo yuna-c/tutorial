@@ -1,0 +1,417 @@
+{
+    "items": [
+        {
+            "type": "coffee",
+            "name": "아이슈페너",
+            "price": "4,300원",
+            "temperature": "ice",
+            "image": "img/a1.png"
+        },
+        {
+            "type": "coffee",
+            "name": "아이슈페너",
+            "price": "4,300원",
+            "temperature": "ice",
+            "image": "img/a2.png"
+        },
+        {
+            "type": "coffee",
+            "name": "아이슈페너",
+            "price": "4,300원",
+            "temperature": "ice",
+            "image": "img/a4.png"
+        },
+        {
+            "type": "coffee",
+            "name": "아이슈페너",
+            "price": "4,300원",
+            "temperature": "ice",
+            "image": "img/a6.png"
+        },
+        {
+            "type": "coffee",
+            "name": "아이슈페너",
+            "price": "4,300원",
+            "temperature": "ice",
+            "image": "img/a7.png"
+        },
+        {
+            "type": "coffee",
+            "name": "아이슈페너",
+            "price": "4,300원",
+            "temperature": "ice",
+            "image": "img/a8.png"
+        },
+        {
+            "type": "coffee",
+            "name": "에스프레소",
+            "price":  "1,500원",
+            "temperature": "hot",
+            "image": "img/a9.png"
+        },
+        {
+            "type": "coffee",
+            "name": "카라멜마끼야또",
+            "price":  "4,500원",
+            "temperature": "hot",
+            "image": "img/a10.png"
+        },
+        {
+            "type": "coffee",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "ico",
+            "image": "img/a62.png"
+        },
+        {
+            "type": "coffee",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "ice",
+            "image": "img/a3.png"
+        },
+        {
+            "type": "coffee",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "ice",
+            "image": "img/a5.png"
+        },
+        {
+            "type": "beverage",
+            "name": "배사과티",
+            "price": "4,500원",
+            "temperature": "ice",
+            "image": "img/a64.png"
+        },
+        {
+            "type": "beverage",
+            "name": "아이스초코",
+            "price": "4,500원",
+            "temperature": "ice",
+            "image": "img/a65.png"
+        },
+        {
+            "type": "beverage",
+            "name": "고구마라뗴",
+            "price": "4,500원",
+            "temperature": "ice",
+            "image": "img/a63.png"
+        },
+        {
+            "type": "beverage",
+            "name": "레몬에이드",
+            "price": "3,500원",
+            "temperature": "ice",
+            "image": "img/a11.png"
+        },
+        {
+            "type": "beverage",
+            "name": "베리젤라또",
+            "price": "5,500원",
+            "temperature": "ice",
+            "image": "img/a12.png"
+        },
+        {
+            "type": "beverage",
+            "name": "자두에이드",
+            "price": "4,000원",
+            "temperature": "ice",
+            "image": "img/a13.png"
+        },
+        {
+            "type": "beverage",
+            "name": "페퍼민트",
+            "price": "3,000원",
+            "temperature": "hot",
+            "image": "img/a14.png"
+        },
+        {
+            "type": "beverage",
+            "name": "블랙티",
+            "price": "3,000원",
+            "temperature": "hot",
+            "image": "img/a15.png"
+        },
+        {
+            "type": "desert",
+            "name": "베리빙수",
+            "price": "9,500원",
+            "temperature": "ice",
+            "image": "img/a16.png"
+        },
+        {
+            "type": "desert",
+            "name": "오레오빙수",
+            "price": "9,000원",
+            "temperature": "ice",
+            "image": "img/a17.png"
+        },
+        {
+            "type": "desert",
+            "name": "와플세트",
+            "price": "4,500원",
+            "temperature": "hot",
+            "image": "img/a18.png"
+        },
+        {
+            "type": "desert",
+            "name": "베리페스츄리",
+            "price": "6,500원",
+            "temperature": "hot",
+            "image": "img/a19.png"
+        },
+        {
+            "type": "desert",
+            "name": "초코페스츄리",
+            "price": "6,500원",
+            "temperature": "hot",
+            "image": "img/a20.png"
+        },
+        {
+            "type": "desert",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "hot",
+            "image": "img/a21.png"
+        },
+        {
+            "type": "desert",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "hot",
+            "image": "img/a22.png"
+        },
+        {
+            "type": "desert",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "hot",
+            "image": "img/a23.png"
+        },
+        {
+            "type": "desert",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "hot",
+            "image": "img/a24.png"
+        },
+        {
+            "type": "desert",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "hot",
+            "image": "img/a25.png"
+        },
+        {
+            "type": "desert",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "hot",
+            "image": "img/a26.png"
+        },
+        {
+            "type": "desert",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "hot",
+            "image": "img/a27.png"
+        },
+        {
+            "type": "desert",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "hot",
+            "image": "img/a28.png"
+        },
+        {
+            "type": "desert",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "hot",
+            "image": "img/a29.png"
+        },
+        {
+            "type": "desert",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "hot",
+            "image": "img/a30.png"
+        },
+        {
+            "type": "desert",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "hot",
+            "image": "img/a31.png"
+        },
+        {
+            "type": "desert",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "hot",
+            "image": "img/a32.png"
+        },
+        {
+            "type": "desert",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "hot",
+            "image": "img/a33.png"
+        },
+        {
+            "type": "desert",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "hot",
+            "image": "img/a34.png"
+        },
+        {
+            "type": "desert",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "hot",
+            "image": "img/a35.png"
+        },
+        {
+            "type": "desert",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "hot",
+            "image": "img/a36.png"
+        },
+        {
+            "type": "desert",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "hot",
+            "image": "img/a37.png"
+        },
+        {
+            "type": "desert",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "hot",
+            "image": "img/a38.png"
+        },
+        {
+            "type": "desert",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "hot",
+            "image": "img/a39.png"
+        },
+        {
+            "type": "sunny",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "ico",
+            "image": "img/sunny.png"
+        },
+        {
+            "type": "sunny",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "ice",
+            "image": "img/sunny.png"
+        },
+        {
+            "type": "sunny",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "ice",
+            "image": "img/sunny.png"
+        },
+        {
+            "type": "sunny",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "ico",
+            "image": "img/sunny.png"
+        },
+        {
+            "type": "sunny",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "ice",
+            "image": "img/sunny.png"
+        },
+        {
+            "type": "sunny",
+            "name": "티라미스",
+            "price": "4,500원",
+            "temperature": "ice",
+            "image": "img/sunny.png"
+        },
+        {
+            "type": "etc",
+            "name": "써니",
+            "price": "4,500원",
+            "temperature": "ice",
+            "image": "img/sunny1.png"
+        },
+        {
+            "type": "etc",
+            "name": "써니",
+            "price": "4,500원",
+            "temperature": "ice",
+            "image": "img/sunny1.png"
+        },
+        {
+            "type": "etc",
+            "name": "써니",
+            "price": "4,500원",
+            "temperature": "ice",
+            "image": "img/sunny1.png"
+        },
+        {
+            "type": "etc",
+            "name": "써니",
+            "price": "4,500원",
+            "temperature": "ice",
+            "image": "img/sunny1.png"
+        },
+        {
+            "type": "etc",
+            "name": "써니",
+            "price": "4,500원",
+            "temperature": "ice",
+            "image": "img/sunny1.png"
+        },
+        {
+            "type": "etc",
+            "name": "써니",
+            "price": "4,500원",
+            "temperature": "ice",
+            "image": "img/sunny1.png"
+        },
+        {
+            "type": "etc",
+            "name": "써니",
+            "price": "4,500원",
+            "temperature": "ice",
+            "image": "img/sunny1.png"
+        },
+        {
+            "type": "etc",
+            "name": "써니",
+            "price": "4,500원",
+            "temperature": "ice",
+            "image": "img/sunny1.png"
+        },
+        {
+            "type": "etc",
+            "name": "써니",
+            "price": "4,500원",
+            "temperature": "ice",
+            "image": "img/sunny1.png"
+        },
+        {
+            "type": "etc",
+            "name": "써니",
+            "price": "4,500원",
+            "temperature": "ice",
+            "image": "img/sunny1.png"
+        }
+    ]
+}
