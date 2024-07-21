@@ -1,0 +1,2318 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>javascript</title>
+		<link rel="stylesheet" href="./css/index.css" />
+	</head>
+	<body>
+		<div class="wrap">
+			<h1>Javascript&nbsp;Basic</h1>
+
+			<div class="code-info">
+				<h2><strong>표현식</strong>(Expression)</h2>
+				<ul class="code-list">
+					<li>값을 만들어 내기 때문에 함수의 인자로 사용</li>
+					<li>
+						<div class="img-box">
+							<img src="https://raw.githubusercontent.com/yuna-c/Javascript/master/img/cmd.PNG" alt="" />
+						</div>
+					</li>
+					<li><a href="/common/basic.js" target="_blank">basic</a></li>
+				</ul>
+			</div>
+			<pre>
+            <code>
+true /false
+26
+"Anna"
+1000 + 900 + 90 + 4
+"Hello" + "Javascript"
+alert(1000 + 900 + 90 + 4);
+alert("Hello" + "javascript");
+            </code>
+        </pre>
+
+			<div class="code-info">
+				<h2><strong>문장</strong>(Statement)</h2>
+				<ul class="code-list">
+					<li>하나 혹은 여러 개의 표현식이 모여 문장을 이룸</li>
+					<li>모든 표현식은 문장이 될 수 있음</li>
+					<li>(보통) 문장의 끝에는 세미콜론 ;</li>
+					<li>한 줄에 여러 문장 적을경우 ;으로 구분, 마지막 문장의 결과 반환</li>
+					<li>조건문(if), 반복문(for)도 문장/ 이 경우 마지막 }뒤에 ; X</li>
+					<li>문장 모여서 프로그램이 됨</li>
+				</ul>
+			</div>
+			<pre>
+            <code>
+true;
+26;
+1000 + 900 + 90 + 4;
+var name = 'Mark';
+alert('Hello');
+true; 26; 100+2000+300; -&gt; 2400(반환)
+            </code>
+        </pre>
+
+			<div class="code-info">
+				<h2><strong>키워드</strong>(keywords)</h2>
+				<ul class="code-list">
+					<li>자바스크립트에서 특정한 목적을 위해 사용하는 단어</li>
+					<li>키워드들은 예약어로 지정되어 있음</li>
+				</ul>
+			</div>
+			<pre>
+            <code>
+블록 레벨 스코프
+var name = 'Mark'; //변수 선언
+const name = 'Mark'; //상수
+let name = 'Mark'; //변수 
+            </code>
+        </pre>
+
+			<div class="code-info">
+				<h2><strong>예약어</strong>(Reserved Words)</h2>
+				<ul class="code-list">
+					<li>프로그램을 작성할 때, 변수명, 함수명 등 이름으로 사용할 수 없는 단어</li>
+					<li>이미 특정한 목적을 위해 사용하기 때문에 사용할 수 없는 예약어</li>
+				</ul>
+			</div>
+			<pre>
+            <code>
+var return = '변수명'; // return은 예약어라 변수명으로 사용X
+function for(){} //for은 예약어라 함수형 사용X
+
+break
+case 
+catch
+continue
+default
+delete
+do 
+else
+finally
+for
+function
+
+if 
+in
+instanceof
+new
+return
+switch
+this
+thriw
+try
+typeof
+var 
+void
+while
+with
+            </code>
+        </pre>
+
+			<div class="code-info">
+				<h2><strong>가능예약어</strong>(Future reserved keywords)</h2>
+				<ul class="code-list">
+					<li>앞으로 특정한 목적을 위해 사용할 가능성이 있어서 사용할 수 없는 예약어</li>
+				</ul>
+			</div>
+			<pre>
+            <code>
+abstract
+boolean
+byte
+char
+class
+const
+debugger
+double
+enum
+export
+extends
+final
+float
+goto
+implements
+import
+int
+interface
+long
+native
+package
+private
+protected
+public
+short
+static
+super
+synchronized
+throws
+transient
+volatile
+            </code>
+        </pre>
+
+			<div class="code-info">
+				<h2><strong>식별자</strong>(Identifier)</h2>
+				<ul class="code-list">
+					<li>코드 내의 변수, 함수, 혹은 속성을 식별하는 문자열(이름)</li>
+					<li>대소문자 구분</li>
+					<li>'유니코드 문자(한글,특수문자)', '$', '_', '숫자(0~9)' 사용 O , 숫자로 시작 X</li>
+					<li>'예약어'는 사용할 수 X, '공백 문자'도 사용할 수 X</li>
+					<li><a href="https://mothereff.in/js-variables" target="_blank">JavaScript variable name validator</a></li>
+					<li>의미없는 이름 사용 X, 역할에 맞는 적절한 이름 짓도록</li>
+				</ul>
+			</div>
+			<pre>
+            <code>
+var name(식별자) = 'Mark(값)';
+function hello() {}
+var person = {name(식별자): 'mark', age(식별자): 37}; //객체
+
+var myName = 'mark'; //다른변수
+var myname = 'mark';
+
+var name1;  //O
+var $name;  //O
+var _name;  //O
+
+//var 1name;  //X
+//var 이름;  //X
+            </code>
+        </pre>
+
+			<div class="code-info">
+				<h2><strong>주석</strong>(Comments)</h2>
+				<ul class="code-list">
+					<li>소스코드에 영향 X, 무시</li>
+					<li>소스코드를 이해할 수 있도록 돕는 역할</li>
+					<li>// 한줄만 주석</li>
+					<li>/* */ 여러줄 주석</li>
+				</ul>
+			</div>
+			<pre>
+            <code>
+/* 화살표 함수는 익명함수 입니다. */
+//(function() {}) (); 
+ (() =>{
+    //즉시 호출 배열 함수(함수 자동 호출)
+ }) (); 
+        </code>
+    </pre>
+
+			<div class="code-info">
+				<h2><strong>변수와 상수</strong>(variable and constant)</h2>
+				<ul class="code-list">
+					<li><a href="./common/example1.js" target="_blank">let,const</a></li>
+				</ul>
+			</div>
+			<pre>
+        <code>
+const name = value; //상수
+let name = value; //변수
+const array = []; 
+
+// 5 와 10을 더해서,
+// 3으로 나누어 나머지가 0 이면, '야호3' 출력하고,
+// 5로 나누어 나머지가 0 이면, '야호5' 출력합니다.
+// return 라는 변수 3으로 나누어 떨어지거나, 5로 나누어 떨어지면 true라는 값을 가지고
+// 아니면 false 라는 값을 가진다.
+
+const sum = 5 + 10;
+// const 상수를_지칭하는_이름(선언하는 방법 = 식별자)
+// const 상수를_지칭하는_이름 = 값; (상수를 선언하면서 바로 값을 할당하는 방법)
+
+let result = false;
+// let 변수를_지칭하는_이름;(변수를 선언하는 방법)
+// let 변수를_지칭하는_이름 = 값;(변수에 값을 할당하는 방법), 선언과 동시에 값을 할당하거나, 이미 선언되어있는 변수에 값 할당 가능 but 선언안된 변수 식별자에는 값을 할당 X
+
+if (sum % 3 === 0) {
+    console.log('야호3');
+    result = true;
+}
+if (sum % 5 === 0) {
+    console.log('야호5');
+    result = true;
+}
+
+// 5 + 10을 저장해두면 불필요한 일 X, 의미 전달O => 이럴 때 쓰는 변수, 상수
+console.log(result);
+        </code>
+    </pre>
+
+			<div class="code-info">
+				<h2><strong>변수의 유효 범위</strong>(Scope of variables)</h2>
+				<ul class="code-list">
+					<li><a href="./common/example2.js" target="_blank">scope</a></li>
+					<li>const, let의 유효 범위(블록 스코프)</li>
+					<li>{} 블록 => 공간 안에서만 사용 가능</li>
+				</ul>
+			</div>
+			<pre>
+        <code>
+//블럭
+{
+    const name = 'Mark';
+    console.log(name);
+}
+// console.log(name); X 에러
+
+// 밖에서 안으로 O
+let age = 37;
+{
+    age++;
+    console.log(age);
+}
+console.log(age++);
+
+//중첩
+{
+    {
+        {
+            console.log(age + '!');
+        }
+    }
+}
+
+//조건문
+if(true) {
+    let age = 37;
+    console.log(age);
+}
+
+age++;
+
+//반복문
+for(let i = 0; i &lt; 5; i++) {
+    const message = 'hello' + i;
+    console.log(message);
+}
+//console.log(message);
+
+//함수
+function hello1() {
+    const names = "Mina";
+    console.log(names);
+}
+//console.log(names);
+
+//arraw 함수
+const hello2 = () => {
+    const ages = 33;
+    console.log(ages);
+}
+//console.log(ages);
+        </code>
+    </pre>
+
+			<div class="code-info">
+				<h2><strong>변수</strong>의 유효범위</h2>
+				<ul class="code-list">
+					<li>함수 스코프 function(){}</li>
+					<li>ES5 까지 잘 쓰인 변수 선언 방식</li>
+					<li><a href="./common/example3.js" target="_blank">var</a></li>
+					<li><a href="./common/example4.js" target="_blank">var2</a></li>
+				</ul>
+			</div>
+			<pre>
+        <code>
+function() { //블록 } // 함수
+
+//블럭
+// O
+var a = 0; // let처럼 바꿀 수 있는 변수
+
+(function(){
+    a++;
+    console.log(a);
+})();
+console.log(a);
+
+// X
+(function(){
+    var b = 4;
+    console.log(b);
+})();
+
+b++;
+console.log(b);
+
+//블록 스코프 안에서 모두가 출력
+var c = 0; 
+{
+    c++;
+    console.log(c);
+}
+console.log(c);
+
+{
+    var d = 0;
+    console.log(d);
+}
+console.log(d);
+        </code>
+    </pre>
+
+			<div class="code-info">
+				<h2><strong>var & hoisting</strong></h2>
+				<ul class="code-list">
+					<li><a href="https://developer.mozilla.org/ko/docs/Glossary/Hoisting" target="_blank">mdn hoisting</a></li>
+					<li><a href="./common/example5.js" target="_blank">hoisting</a></li>
+					<li>아래 있는 함수를 위에서 호출 할 수 있는 형태</li>
+					<li>var은 선언부만 가장 위에 올라감 var name;</li>
+					<li>
+						<div class="img-box">
+							<img src="https://raw.githubusercontent.com/yuna-c/Javascript/master/img/cmd2.PNG" alt="" />
+						</div>
+					</li>
+				</ul>
+			</div>
+			<pre>
+        <code>
+var name; //선언부
+console.log(name);
+
+name= 'Mark';
+
+console.log(name);
+
+name= 'Yuna';// 가장 아래 쪽에서 값을 할당
+        
+//함수 먼저 호출
+function hello1(){
+    console.log('hello');
+}
+
+hello1();
+
+//함수의 호출을 먼저
+hello2();
+
+function hello2(){
+    console.log('hello2');
+}
+
+//문제 없어
+age = 6;
+age++;
+console.log(age);
+
+var age;
+
+//위에서 출력한 데이터가 안나올 때
+console.log(name);
+
+name= 'Mark';
+
+console.log(name);
+
+var name = "Yuna";
+
+
+//let hoisting x 니까 Cannot access
+console.log(example);
+
+example = "Nana";
+
+console.log(example);
+
+let example;
+        </code>
+    </pre>
+
+			<div class="code-info">
+				<h2><strong>자료형</strong>(Data Types)</h2>
+				<ul class="code-list">
+					<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Data_structures" target="_blank">mdn data types</a></li>
+					<li>동적 타이핑 : 변수가 가지는 고정 타입이 없음, 타입자체X는 아님</li>
+					<li>
+						<b>데이터 타입</b><br /><br />
+						<b>기본타입(Primitive values)</b><br />
+						<a href="./common/example11.js">data</a>
+						<a href="./common/example6.js" target="_blank">Boolean</a><br />
+						<a href="./common/example7.js" target="_blank">Null/Undefined</a><br />
+						<a href="./common/example8.js" target="_blank">Number</a><br />
+						<a href="./common/example9.js" target="_blank">String</a><br />
+						<a href="./common/example10.js" target="_blank">Symbol(ECNAScript6에 추가됨)</a><br /><br />
+
+						<b>객체(Object)</b>(사용자 정의 타입, 실행환경(node.js), 내장 객체)<br />
+					</li>
+				</ul>
+			</div>
+			<pre>
+        <code>
+&lt;Boolean&gt;
+true boolean
+false boolean
+[Boolean: false] object
+false?
+false boolean
+조건문 안의 false 안찍힘
+
+
+&lt;Null & Undefined&gt;
+null object
+undefined undefined
+undefined undefined
+== 값 비교 true
+=== 값 타입 비교
+
+
+&lt;Number&gt;
+37 number
+96.7 number
+NaN number(숫자가 아닌 값)
+NaN number
+37 number
+
+
+&lt;String&gt;
+Mark string
+MarkLEE string
+MarkLee string
+Mark Choi string
+
+
+&lt;Symbol&gt;
+Symbol() symbol
+Symbol(37) symbol
+false
+Error = Symbol is not a constructor
+        </code>
+    </pre>
+
+			<div class="code-info">
+				<h2><strong>조건문</strong>(Conditional Statements)</h2>
+				<ul class="code-list">
+					<li>
+						표현식이 참으로 평가될 때 실행되는 블럭<br />
+						한개 이상의 Statements 코드 덩어리
+					</li>
+					<li>
+						if(표현식){<br />
+						&nbsp;&nbsp;표현식이 참으로 평가될 때, 실행되는 블럭<br />
+						} else if(){<br />
+						&nbsp;&nbsp;if에 해당하지 않을 때<br />
+						} else{<br />
+						&nbsp;&nbsp;if에 해당하지 않을 때<br />
+						}
+					</li>
+					<li>
+						<b>표현식이 거짓으로 평가될때 : falsy</b><br />
+						false<br />
+						0<br />
+						"<br />
+						null<br />
+						undefined<br />
+						NaN
+					</li>
+					<li>
+						<b>표현식이 참으로 평가될때 : Truethy</b><br />
+						true<br />
+						37<br />
+						'Mark'<br />
+						{}<br />
+						[]
+					</li>
+					<li><a href="./if/example1.js" target="_blank">if</a></li>
+					<li><a href="./if/example2.js" target="_blank">if2</a></li>
+					<li><a href="./if/example3.js" target="_blank">else</a></li>
+					<li><a href="./if/example4.js" target="_blank">elseif</a></li>
+				</ul>
+			</div>
+			<pre>
+        <code>
+if(표현식){
+  표현식이 참으로 평가될 때, 실행되는 블럭
+} else if(표현식){
+
+} else {
+
+}
+
+
+&lt;if&gt;
+//블록에 코드가 한줄이면, 중괄호{} 생략 가능
+if(true) console.log('항상 실행');
+if(false) console.log('항상 실행되지 않음');
+
+
+&lt;if2&gt;
+true
+37
+-37
+Mark
+{}
+[]
+
+
+&lt;else&gt;
+n이 0 보다 큰 경우 실행
+n이 0 보다 크지 않은 경우 실행
+
+
+&lt;else if&gt;
+n 은 3의 배수 입니다.
+n 은 15의 배수 입니다.
+        </code>
+    </pre>
+
+			<div class="code-info">
+				<h2><strong>논리 연산자</strong>를 이용한 조건문 평가</h2>
+				<ul class="code-list">
+					<li><a href="./conditional/example1.js" target="_blank">&&(and, Ampersand)</a></li>
+					<li><a href="./conditional/example2.js" target="_blank">||(or, Vertical)</a></li>
+					<li><a href="./conditional/example3.js" target="_blank">!(not)</a></li>
+					<li><a href="./conditional/example4.js" target="_blank">조건부 실행</a></li>
+					<li><a href="./conditional/example5.js" target="_blank">삼항연산자를 이용한 조건부 실행</a></li>
+					<li><a href="./conditional/example6.js" target="_blank">switch를 이용한 조건부 실행</a></li>
+				</ul>
+			</div>
+			<pre>
+        <code>
+&lt;true/false&gt;
+if(true && true){
+    console.log('두개 모두 참이면 참입니다');
+}
+if(true || true){
+    console.log('두개 모두 참이면 참입니다');
+}
+if(!true){
+    console.log('참이면 거짓입니다');
+}
+let n = 5;
+(n % 5 === 0) && console.log('5로 나누어 떨어질 때만 실행!');
+let m = 6; 
+(m % 5 === 0) || console.log('5로 나누어 떨어지지 않을때만 실행!');
+
+
+&lt;삼항 연산자&gt;
+let n = 5;
+console.log(n % 5 === 0? '5의 배수입니다.' : '5의 배수가 아닙니다.'); 
+const message = n % 5 === 0? '5의 배수입니다!' : '5의 배수가 아닙니다!';
+console.log(message);
+
+const message = n % 5 === 0? '5의 배수입니다!' : '5의 배수가 아닙니다!';
+console.log(message);//문자열 바로 출력
+
+function getFee(isNmuber){
+    return(isNmuber ? '$2:00' : '$10:00');
+}
+console.log(getFee(true));
+console.log(getFee(false));
+console.log(getFee(null));
+
+const age = 26;
+let beverage = (age >= 21) ? "beer" : "juice";
+console.log(beverage);
+
+let greeting = person =>{
+    let name = person ? person.name : 'stranger'
+    return `Howdy, ${name}`
+}
+console.log(greeting({name : `Alice`}));  //"Howdy, Alice"
+console.log(greeting(null));
+
+let value1 = 1;
+let value2 = 2;
+let value3 = 3;
+let value4 = 4;
+
+let condition1 = value1 + '1'; 
+function example(condition1,condition2,condition3){
+    return condition1 ? value1
+        : condition2 ? value2
+        : condition3 ? value3
+        : value4;
+}
+
+console.log(example(true));
+console.log(example(false));
+console.log(example(null));
+
+function example2(condition1,condition2,condition3) {
+    if (condition1) { return value1 +`!`; }
+    else if (condition2) { return value2 +`!`; }
+    else if (condition3) { return value3 +`!`; }
+    else { return value4; }
+}
+
+console.log(example2(true), typeof value1);
+console.log(example2(false), typeof condition2);
+console.log(example2(null), typeof example2);
+
+
+&lt;switch&gt;
+let n = 5;
+switch (n// 어떤조건){
+    //어떤 조건에 안맞아도 실행되고 default에 닿으면
+    default: {
+        console.log(n, typeof n);
+    }
+}
+// 중괄호 생략 가능
+let n = 5; 
+switch(n){
+    default:
+        console.log(n, typeof n);
+}
+
+// n을 5로 나눈 어떤 값이 case의 어떤것과 맞는지
+switch(n % 5) {
+    case 0: {
+        console.log('5의 배수 입니다.');
+    }
+    default:
+        console.log(n, typeof n);
+}
+        </code>
+    </pre>
+
+			<div class="code-info">
+				<h2><strong>반복문</strong>(Iteration Statements)</h2>
+				<ul class="code-list">
+					<li>반복문 : 특정 코드 블록을 반복 시킬 때 사용</li>
+					<li><a href="./iteration/example1.js" target="_blank">for</a></li>
+					<li>
+						for(초기화; 반복조건; 반복이 된 후 실행되는 코드){<br />
+						&nbsp;&nbsp;반복이 되는 코드 블럭<br />
+						}
+					</li>
+					<li><a href="./iteration/example2.js" target="_blank">for2</a></li>
+					<li>
+						for(;;){<br />
+						&nbsp;&nbsp;d<br />
+						}
+					</li>
+					<li><a href="./iteration/example3.js" target="_blank">while</a></li>
+					<li>
+						while(조건){// true일 때 계속실행 <br />
+						&nbsp;&nbsp;조건이 거짓이 될 때까지 반복 실행<br />
+						}
+					</li>
+					<li><a href="./iteration/example4.js" target="_blank">dowhile</a></li>
+					<li>
+						do{<br />
+						&nbsp;&nbsp;조건이 거짓이 될 때까지 반복 실행<br />
+						} while(조건);
+					</li>
+					<li><a href="./iteration/example5.js" target="_blank">for of/for in</a></li>
+					<li>
+						for(const i of [1, 2, 3]){<br />
+						&nbsp;&nbsp;console.log(i);<br />
+						}
+					</li>
+					<li>
+						프로토 타입 안에 프로포티를 설정을 해 놓으면, 객체같은 경우 ABC만 나올 수 있는 것 처럼 느껴지지만 TEST도 함께나와, 의도치 않은 상황에 맞닥드릴 수 있으니 주의해서 사용해야 함<br />
+						Object.prototype.test = function() {};<br /><br />
+
+						for(const i of {a: 1, b: 2, c: 3}){<br />
+						&nbsp;&nbsp;console.log(i);<br />
+						}
+					</li>
+				</ul>
+			</div>
+			<pre>
+        <code>
+for(a;b;c){
+    d
+}
+e
+//a-&gt;d-&gt;c-&gt;b-&gt;d-&gt;c-&gt;b-&gt;e
+
+// 반복문이 없다면?
+console.log('안녕하세요');
+console.log('안녕하세요');
+console.log('안녕하세요');
+console.log('안녕하세요');
+console.log('안녕하세요');
+
+// for문을 사용한다면?
+// 보통 어떤 유한한 횟수만큼 반복할 때는 for문을 사용합니다.
+
+for(let i = 0; i &lt; 5; i++){
+    console.log('안녕하세요!');
+}
+
+// 초기화 하면서 선언된 변수를 중괄호 안 반복 블럭에서 사용 할 수 있습니다.
+for(let i = 0; i &lt; 5; i++){
+    console.log('hi hello 안녕', i);
+}
+
+for(let i = 0, j = 5; i &lt; 5; i++){
+    console.log('hi hello 안녕!', i, j);
+}
+
+for(let i = 0, j = 2; i &lt; 5; i++, j = j * j){
+    // i는 하나씩 증가시키고 j는 j*j되는 값을 실행
+    console.log('hi hello 안녕!!', i, j);
+}
+
+// 반복문을 즉시 종료하고 싶을 때는 반복되는 블럭 안에서 break;를 실행하면 가능합니다.
+for(let i = 0; i &lt; 5; i++){
+    console.log(i);
+    if(i > 2) {
+        break;
+
+        //3 후에 반복문 종료되니까 안녕 안찍힘
+    }
+    console.log('hi hello 안녕★', i);
+}
+
+// 반복되는 블럭 안에서 continue;를 만나면 거기서 바로 해당 블럭은 종료됩니다.
+// 그리고 이와 같이 다음 반복이 있으면 다음 반복으로 넘어갑니다.
+for(let i = 0; i &lt; 5; i++){
+    console.log('~★ ~!', i);
+    if(i &lt; 2){
+        continue;
+        //i가 2보다 작을때는 hi가 통과되어서 안찍힘
+    }
+    console.log(' ~★ ~ hi hello 안녕★', i);
+}
+
+
+&lt;for2 무한루프&gt;
+for(;;){
+    d
+}
+
+// for 무한루프
+for(;;){
+    console.log('안녕안녕');
+    if(Math.random() * 100 > 90){
+        break;
+    }
+}
+
+
+&lt;while(조건){ 조건이 거짓이 될 때까지 반복 실행 }&gt;
+while(true){
+    console.log('안녕하세요');
+    if(Math.random() * 100 > 90){
+        //랜덤한 숫자를 기준으로 break되도록
+        break;
+    }
+}
+
+
+&lt;do while&gt;
+do{ //조건을 먼저 판단하지 않고 실행한 다음에, 조건을 실행하고 다시 돈다
+    //무조건 한번은 실행됨
+    조건이 거짓이 될 때까지 반복 실행
+} while(조건);
+
+do { console.log('안녕하세요');
+} while(Math.random() * 100 <= 90);
+// 평가에 의해서 반복블럭이 실행되는지 결정
+
+
+
+&lt; for of -> iterable한 객체에 모두 사용&gt;
+//iterable한 객체(배열)
+
+for (const i of [1, 2, 3]){
+    console.log('!',i);
+}
+
+
+&lt;for in -> 모든 프로퍼티에 사용, 객체, 객체 안에 있는 프로포티 하나하나&gt;
+
+Object.prototype.test = function() {};
+
+for(const i in {a: 1, b: 2, c: 3}){
+    console.log(i);
+}
+        </code>
+    </pre>
+
+			<div class="code-info">
+				<h2><strong>함수</strong>(function)</h2>
+				<ul class="code-list">
+					<li><a href="./function/example1.js" target="_blank">선언적 함수</a></li>
+					<li>function hello() {} :함수를 만들 때 사용하는 키워드</li>
+					<li><a href="./function/example2.js" target="_blank">익명 함수</a></li>
+					<li>const hello = function() {} :함수를 만들 때 사용하는 키워드</li>
+					<li>차이점 : 선언적 function과 익명함수를 만들어 변수에 할당</li>
+					<li><a href="./function/example3.js" target="_blank">차이점</a></li>
+					<li>const hello = new Function();</li>
+					<li><a href="./function/example4.js" target="_blank">생성자를 함수로 만드는 방법</a></li>
+					<li><a href="./function/example5.js" target="_blank">function()과 new Function(); 차이점</a></li>
+					<li><a href="./function/example6.js" target="_blank">화살표 함수(arrow function), es6</a></li>
+					<li><a href="./function/example7.js" target="_blank">생성자 함수(new 함수();)</a></li>
+					<li><a href="./function/example8.js" target="_blank">함수 안에서 함수를 만들어 리턴</a></li>
+					<li><a href="./function/example9.js" target="_blank">함수를 호출할 때, 인자로 함수를 사용</a></li>
+					<li>함수도 객체의 한 종류</li>
+				</ul>
+			</div>
+			<pre>
+    <code>
+&lt;function&gt;
+// 이름이 hello1인 함수를 선언
+function hello1 (/*매개변수=인자*/){
+    console.log('hello1');
+    //내장객체
+}
+console.log(hello1, typeof hello1);
+
+// 함수의 매개변수
+// 함수를 호출할 때 값을 지정
+function hello2(name){ //바디안에서 사용할 이름 정하기
+    console.log('hello2', name);
+}
+console.log(hello2, typeof hello2);
+
+// 함수를 리턴
+// 함수를 실행하면 얻어지는 값
+function hello3(name){
+    return `hello3 ${name}`;
+}
+
+//함수 호출
+console.log(hello3('Yuna'));
+
+//const hello = function() {} 
+
+
+&lt;익명함수&gt;
+// const hello = function() {} :변수 = 함수를 만들 때 사용하는 키워드
+
+// funtion
+// 이름이 hello1인 함수를 선언
+
+const hello1 = function(name){
+    // return `hello1 ${name}`;
+    console.log('hello1');
+};
+console.log(hello1, typeof hello1);
+console.log(hello1('nana'));
+
+// 함수의 매개변수
+// 함수를 호출 할 때 값을 지정
+const hello2 = function(name){ // 바디 = 매개변수
+    console.log('hello2', name);
+}
+console.log(hello2('nana'));
+
+// 함수의 리턴
+// 함수를 실행하면 얻어지는 값
+const hello3 = function(name){
+    return `hello3${name}`;
+}
+console.log(hello3('Yuna'));
+
+
+&lt;차이점&gt;
+// 선언적 function(example1)과 익명함수를 만들어 변수에 할당(example2)의 차이
+var hello2;
+console.log(hello2);
+// hello2가 뭔지는 알지만, 함수가 아니라고 판단하니까 undefined
+
+hello1();
+//hello2();
+hello3();
+
+// 선언적 방법
+function hello1(){
+    console.log('hello1');
+}
+
+// 익명함수
+hello2 = function (){
+    console.log('hello2');
+}
+
+// hello3이 정의되지 않음, 선언한 적이 없는 
+const hello3 = function(){
+    console.log('hello3');
+}
+
+
+&lt;생성자 함수로 함수를 만드는 방법(익명함수와 비슷)&gt;
+// new Function(/* 인자1, 인자2, 인자3, ..., 함수의 바디 = 매개변수*/);
+// 매개변수가 문자열로 들어간다
+//const hello = new Function();
+
+//console.log(sum(4, 2, 3)); 호이스팅 X
+//객체
+const sum = new Function('a', 'b', 'c', 'return a + b + c');
+
+console.log(sum(4, 2, 3));
+
+
+&lt;차이점&gt;
+// 전역에서 가지고오는 것 가능
+global.a = 0;
+
+{
+    const a = 1; 
+
+    const test = new Function('return a'); // 변수가 상위 지역변수에 접근이 안된다
+
+    console.log(test());
+    //a is not defined 
+    // 0
+}
+{
+    const a = 2; 
+    const test = function(){
+        return a;
+    }
+
+    console.log(test());
+
+    // 2
+}
+
+
+&lt;화살표 함수&gt;
+// () => { arrow function }
+
+// arrow 함수를 만들어 이름이 hello1 인 변수에 할당
+
+const hello1 = () => {
+    console.log('hello1');
+    //함수를 만들어 const hello1이라는 변수에 넣지만, 선언적 방식(익명함수)으로 쓰일 수는 없다
+}
+
+
+&lt;함수의 매개변수&gt;
+// 함수를 호출할 때 값을 지정
+
+// 매개변수가 하나일 때, 괄호 생략가능
+
+const hello2 = name => { // () 생략 가능
+    console.log('hello2', name)
+}
+
+const hello3 = (name, age) =>{
+    // 매개변수 하나가 아닐 때는 괄호 꼭 필요
+    console.log('hello3', name, age);
+}
+// 함수의 리턴
+// 함수를 실행하면 얻어지는 값
+
+const hello4 = (name)=>{
+    return `hello4 ${name}`;
+}
+
+//생략 가능(함수)
+const hello5 = name => `hello5 ${name}`;
+// 다른 로직이 있을 때 중괄호로 로직 작성
+
+
+&lt;생성자 함수&gt;
+// new를 사용하여 하나의 객체들로 사용 할 수 있다.
+// 생성자 함수를 이용하여 새로운 객체를 만들어 내는 방법
+
+function Person(name, age){
+    this.name = name;
+    this.age = age;
+}
+
+const p = new Person('Mark','31');
+
+console.log(p, p.name, p.age);
+
+// 객체를 만드는 하나의 방법
+const a = new Person('Unn','32');
+console.log(a, a.name, a.age);
+
+
+&lt;함수를 호출하면 함수를 만들어 리턴&gt;
+
+function plus(base){ //인자
+    return function(num){
+        return base + num;
+        // 5 +
+    }
+}
+
+const plus5 = plus(5);
+console.log(plus5(10)); //15
+
+const plus7 = plus(7);
+console.log(plus7(8)); //15
+
+
+&lt;함수를 인자로 하여 함수를 호출&gt;
+
+function hello(c)/*callback*/{
+    console.log('hello');
+    c();
+}
+
+hello(function() { //익명, 화살표 함수 쌉가능
+    console.log('콜백');
+});
+//hello(() =>{});
+        </code>
+    </pre>
+
+			<div class="code-info">
+				<h2><strong>객체</strong>(object)</h2>
+				<ul class="code-list">
+					<li>함수, 클래스(틀) -&gt; 객체, 개체, object(인스턴스)</li>
+					<li><a href="./object/example1.js" target="_blank">객체</a></li>
+					<li><a href="./object/example2.js" target="_blank">객체에(property) 속성 추가하기</a></li>
+					<li><a href="./object/example3.js" target="_blank">new Object()</a></li>
+					<li><a href="./object/example4.js" target="_blank">프로토타입 체인(.prototype)</a></li>
+					<li><a href="./object/example5.js" target="_blank">프로토타입을 이용한 객체 확장(.prototype)</a></li>
+					<li><a href="./object/example6.js" target="_blank">객체 리터럴</a></li>
+					<li><a href="./object/example7.js" target="_blank">표준 내장 객체</a></li>
+					<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects" target="_blank">Mdn 표준 객체</a></li>
+				</ul>
+			</div>
+			<pre>
+        <code>
+&lt;생성자 함수로 객체 만들기&gt;
+// function 틀(){} => new 틀()(인스턴스 생성)
+
+function A(){}
+const a = new A(); // newA가 a라는 객체에 할당
+console.log(a, typeof a);
+//A {} object
+console.log(A());// 생성자 함수가 아니기 때문에, 객체를 만들어내는 것이아니라 함수를 실행하고, 리턴을 가지고 오지만 리턴이없어서 undefined 
+
+// 생성하면서 데이터 넣기
+function B(name, age){
+    console.log(name, age);
+};
+
+//객체 생성
+const b = new B();// 인자없이 생성한 객체 undefined
+const c = new B('yuna', 31); // 인자 있는  생성자 함수
+console.log(B());
+
+function C(na, ga){
+    console.log(na, ga);
+}
+const d = new C();
+const e = new C('na1','ga1');
+console.log(c, typeof c);
+console.log(C());
+
+
+&lt;객체에 속성 추가하기&gt;
+// 객체에 속성 추가하기(property)
+
+// 값을 속성으로 넣기
+
+function A(){ //생성자 함수로 사용
+    //객체
+    this.name = 'Mark';
+}
+
+const a = new A(); // {name:'Mark'}, 객체 생성
+console.log(a);
+
+// 함수를 속성으로 넣기
+function B(){
+    this.hello = function(){
+        console.log('hello');
+    }
+}
+
+(new B()).hello(); //함수 실행
+
+function D(){
+    this.hello = function(){
+        console.log('hello❤');
+    }
+}
+
+(new D()).hello();
+
+// new Function() -> 표준 내장 객체, Function생성자 함수
+
+ function C(){
+     this.name = 'Yuna';
+     this.age = 33;
+ }
+
+
+ const c = new C();
+ console.log(c);
+
+
+ &lt;Object&gt;
+//new Object() object로 객체 만들기
+//object = 기초객체, 내장객체
+
+const a = new Object(); 
+console.log(a, typeof a);
+
+const b = new Object(true);
+console.log(b, typeof b);
+
+const c = new Object({ mame : 'mark'});//리터럴 객체
+console.log(c, typeof c);
+
+
+&lt;프로토타입 체인(prototype)&gt;
+// 프로토타입 체인 : 모든 객체들을 연결해 사용하는 것
+
+function Person(name, age//인자){ //생성자함수
+    this.name = name;
+    this.age = age;
+    // this.hello = function(){
+    //     console.log('hello', this.name, this.age);
+    // };
+}
+
+Person.prototype.hello = function(){// 프로토타입의 프로포티
+    console.log('hello',this.name, this.age);
+}
+
+const p = new Person('Yuna',31);
+p.hello();
+console.log(p.toString());
+
+console.log(Person.prototype);
+console.log(Person.prototype.toString);
+console.log(Person.prototype.constructor); // 함수 자체
+console.log(Person.prototype.hello); //프로포티로 hello
+
+console.log(Object.prototype);
+console.log(Object.prototype.toString);
+console.log(Object.prototype.constructor); //오브젝트 객체의 생성자 함수
+
+console.log(p instanceof Person); // p가 어떤것으로부터 나온 연산자인지
+console.log(p instanceof Object); // p라는 객체가 Object로 부터 나온 인스턴스냐
+
+
+&lt;prototype 상속&gt;
+
+//부모 객체
+function Person(){
+
+}
+
+Person.prototype.hello = function(){
+    console.log('hello');
+}
+
+//자식 객체
+function Korean(region){
+    this.region = region;
+    this.where = function(){
+        console.log('where', this.region);
+    };
+}
+
+Korean.prototype = Person.prototype;
+
+const k = new Korean('Seoul');
+
+k.hello();
+k.where();
+
+console.log(k instanceof Korean);
+console.log(k instanceof Person);
+console.log(k instanceof Object);
+
+
+function Onedays(){}
+
+Onedays.prototype.hello = function(){
+    console.log("OK Bye");
+}
+
+function Wenday(that){
+    this.that = that;
+    this.where = function(){
+        console.log('where', this.that);
+    }
+}
+
+Wenday.prototype = Onedays.prototype;
+
+const d = new Wenday('thisday');
+
+d.hello();
+d.where();
+
+console.log(d instanceof Onedays);
+console.log(d instanceof Wenday);
+console.log(d instanceof Object);
+
+
+&lt;객체 리터럴&gt;
+const a = {};
+/*
+상수는 변하지 않는 변수를 의미하며(메모리 위치) 메모리 값을 변경할 수 없다.
+리터럴은 변수의 값이 변하지 않는 데이터(메모리 위치안의 값)를 의미한다. 
+보통은 기본형의 데이터를 의미하지만, 특정 객체(Immutable class , VO class)에 한에서는 리터럴이 될 수 있다.
+*/ 
+
+console.log(a, typeof a);
+
+const b = {
+    name : 'NaNa',//문자열 값
+};
+
+console.log(b, typeof b);
+
+const c = {
+    name : 'Mark',
+    hello1(){ //함수
+        console.log('hello1', this.name);
+    },
+    hello2 : function(){
+        console.log('hello2', this.name);
+    },
+    hello3: () => {
+        console.log('hello3', this.name);
+    }
+}
+
+c.hello1();
+c.hello2();
+c.hello3();
+
+
+&lt;표준 내장 객체 : Array &gt;
+const a = new Array('red','black','white');// 생성자함수로 표현(배열)
+console.log(a, typeof a);
+
+//[ 'red', 'black', 'white' ] object 
+console.log(a instanceof Array); //array의 인스턴스
+console.log(a instanceof Object); //object의 인스턴스
+
+const b = ['red','green','yellow'];//리터럴 표현법
+console.log(b, typeof b);
+console.log(b instanceof Array); //array의 인스턴스
+console.log(b instanceof Object); //object의 인스턴스
+
+console.log(b.slice(0,1));
+console.log(Array.prototype.slice, Object.prototype.slice);
+        </code>
+    </pre>
+
+			<div class="code-info">
+				<h2><strong>클래스</strong>(class)</h2>
+				<ul class="code-list">
+					<li><a href="./class/example1.js" target="_blank">클래스</a></li>
+					<li><a href="./class/example2.js" target="_blank">생성자(constructor)</a></li>
+					<li><a href="./class/example3.js" target="_blank">멤버 변수(객체의 프로퍼티)</a></li>
+					<li><a href="./class/example4.js" target="_blank">멤버 함수</a></li>
+					<li><a href="./class/example5.js" target="_blank">get(게터),set(세터)</a></li>
+					<li><a href="./class/example6.js" target="_blank">static 변수, 함수(객체가 아니고, 클래스의 변수와 함수)</a></li>
+					<li><a href="./class/example7.js" target="_blank">extends 클래스의 상속 기본</a></li>
+					<li><a href="./class/example8.js" target="_blank">override(클래스의 상속 멤버 변수 및 함수 오버라이딩 추가)</a></li>
+					<li><a href="./class/example9.js" target="_blank">supper</a></li>
+					<li><a href="./class/example10.js" target="_blank">static 상속</a></li>
+				</ul>
+			</div>
+			<pre>
+        <code>
+&lt;class&gt;
+// 객체를 만들 수 있는 새로운 방법 es6 class
+// 1-1.선언적 방식
+class A {}
+console.log(new A());
+
+// 1-2.class 표현식을 변수에 할당
+const B = class {};
+console.log(new B());
+
+// 선언적 방식이지만 호이스팅은 일어나지 않는다.
+new C();
+class C {};
+
+
+&lt;생성자(constructor)&gt;
+class A {}
+console.log(new A());
+
+class B { // B가 객체로 생성이 될 때, constructor라고 하는 함수가 생성됨
+    constructor(){
+        console.log('constructor');
+    }
+}
+console.log(new B());
+
+class C {
+    constructor(name, age){
+        console.log('constructor😊', name, age);
+    }
+}
+
+console.log(new C('YUNA', 31));
+console.log(new C('YUNAM', 31));
+console.log(new C());
+
+
+&lt;멤버 변수&gt;
+class A {
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+}
+
+console.log(new A('YUNA',31));
+
+// class field는 런타임 확인(node12 이상부터 undefinde)
+class B { // class의 필드를 직접 써주는 방식
+    name; // this.name
+    age;  // this.age
+}
+
+console.log(new B());
+
+class C {
+    name = 'no name'; //초기값 설정
+    age = 0;
+
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+};
+
+console.log(new C('NANA',5));
+
+
+&lt;멤버 함수&gt;
+class A {
+    hello1(){
+        console.log('hello1', this);
+    }
+
+    hello2 = () => {
+        console.log('hello2', this);
+    }
+}
+
+new A().hello1();
+new A().hello2();
+
+class B {
+    name = 'Mark';
+
+    hello(){
+        console.log('hello', this.name);
+    }
+}
+
+new B().hello();
+
+
+&lt;get,set&gt;
+class A {
+    _name = 'no name';
+
+    //겟 함수
+    get name(){
+        return this._name + '$$$';
+    }
+
+    //셋 함수 + 인자
+    set name(value){
+        this._name = value + '!!!';
+    }
+}
+
+const a = new A();
+console.log(a);
+a.name = 'Mark'; //문자열이 set
+console.log(a);
+console.log(a.name);
+console.log(a._name);
+
+
+//readonly
+class B {
+    _name = 'no name'; // _ 외부에서 값을 바꾸지 말자
+
+    get name(){
+        return this._name + '@@@';
+    }
+}
+
+const b = new B();
+console.log(b);
+b.name = 'Nark';
+console.log(b);
+
+
+&lt; static 변수, 함수&gt;
+// 객체가 아니고, 클래스의 변수와 함수
+
+class A {
+    // static 변수
+    static age = 37;
+    static hello(){
+        console.log(A.age);
+        //클래스의 함수
+    }
+}
+
+console.log(A, A.age);
+A.hello();
+
+// [class A] { age: 37 } 37
+// 37
+
+
+//말이 안되는 문법
+class B {
+    age = 37;
+    static hello(){
+        console.log(this.age);
+    }
+}
+
+console.log(B, B.age);
+B.hello();
+//new B().hello(); //객체에 속해있는 함수가 아니다
+
+//[class B] undefined
+// undefined
+
+class C {
+    static name = '이 클래스의 이름을 C가 아니다';
+    //static의 네임변수에 할당한 값이 A자리에 들어온다
+}
+console.log(C);
+
+
+&lt;extends 클래스의 상속 기본&gt;
+class Parent {
+    name = 'Choi';
+
+    hello(){
+        console.log('hello', this.name);
+    }
+}
+
+class Child extends Parent{}
+
+const p = new Parent();
+const c = new Child();
+console.log(p, c);
+// Parent { name: 'Lee' :멤버변수} Child { name: 'Lee' }
+
+c.hello();
+c.name = 'Anna';
+c.hello();
+
+// hello Choi
+// hello Anna
+
+
+&lt;override&gt;
+// 변수, 함수 추가 및 오버라이딩
+
+class Parent{
+    name = 'lee';
+
+    hello(){
+        console.log('hello', this.name);
+    }
+}
+//부모가 가지고 있는 멤버 변수와 함수를 가져옴
+class Child extends Parent{
+    age = 37;
+
+    hello(){
+        console.log('hello', this.name, this.age);
+    }
+}
+
+const p = new Parent();
+const c = new Child();
+
+console.log(p, c);
+
+c.hello();
+c.name = 'Anna';
+c.hello();
+
+
+&lt;supper&gt;
+// 클래스의 상속 생성자 함수 변경
+class Parent{
+    name;
+
+    constructor(name){
+        this.name = name;
+    }
+    hello(){
+        console.log('hello', this.name);
+    }
+}
+
+class Child extends Parent{
+    age;
+
+    constructor(name, age){
+        super(name);
+        // 부모의 constructor의 행위를 받아서 실행 하고 자식 요소에서 할 것들을 하기 위해 supper로 받아옴
+        this.age = age;
+    }
+
+    //오버라이딩
+    hello(){
+        console.log('hello', this.name, this.age);
+    }
+}
+
+const p = new Parent('Mark');
+const c = new Child('Mark',39);
+
+console.log(p, c);
+c.hello();
+
+
+&lt;static 상속&gt;
+
+class Parent{
+    static age = 37;
+}
+
+class Child extends Parent{}
+
+console.log(Parent.age, Child.age);
+
+// 부모 클래스 -> 자식 클래스 상속
+// 부모 클래스-> new 클래스를 통해서 -> new라는 인스턴스가 만들어진다
+// 스테틱변수 : 부모로부터 자식으로 내려오고, 함수도 마찬가지
+// 멤버 변수, 멤버 함수도 부모인스턴스와 자식인스턴스로 상속 가능
+        </code>
+    </pre>
+
+			<div class="code-info">
+				<h2><strong>Promise</strong></h2>
+				<ul class="code-list">
+					<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></li>
+					<li>자바스크립트에서 함수를 호출해서 시작되고 끝나는 동안에도 프로그램 진행해야 할 때, 비동기적인 상황에서 코드를 명확하게 표현,실행</li>
+					<li>
+						<div class="img-box">
+							<img src="https://raw.githubusercontent.com/yuna-c/Javascript/master/img/promise.PNG" alt="" />
+						</div>
+					</li>
+					<li><a href="./promise/example1.js" target="_blank">promise</a></li>
+					<li><a href="./promise/example2.js" target="_blank">promise, excutor</a></li>
+					<li><a href="./promise/example3.js" target="_blank">promise, resolve, reject</a></li>
+					<li><a href="./promise/example4.js" target="_blank">promise, pending</a></li>
+					<li><a href="./promise/example5.js" target="_blank">promise, fulfilled</a></li>
+					<li><a href="./promise/example6.js" target="_blank">promise, rejected</a></li>
+					<li><a href="./promise/example7.js" target="_blank">promise객체</a></li>
+					<li><a href="./promise/example8.js" target="_blank">promise, callback</a></li>
+					<li><a href="./promise/example9.js" target="_blank">promise, callback, resolve</a></li>
+					<li><a href="./promise/example10.js" target="_blank">promise, callback, resolve function</a></li>
+					<li><a href="./promise/example11.js" target="_blank">promise, callback, reject catch</a></li>
+					<li><a href="./promise/example12.js" target="_blank">promise, callback, resolve message</a></li>
+					<li><a href="./promise/example13.js" target="_blank">promise, callback, reject message</a></li>
+					<li><a href="./promise/example14.js" target="_blank">promise, callback, error 객체</a></li>
+					<li><a href="./promise/example15.js" target="_blank">promise, callback, reject .finally()</a></li>
+					<li><a href="./promise/example16.js" target="_blank">비동기 작업 callback</a></li>
+					<li><a href="./promise/example17.js" target="_blank">then에 promise 객체 체이닝</a></li>
+					<li><a href="./promise/example18.js" target="_blank">Promise.resolve()</a></li>
+					<li><a href="./promise/example19.js" target="_blank">Promise.reject()</a></li>
+					<li><a href="./promise/example20.js" target="_blank">Promise.all([])</a></li>
+					<li><a href="./promise/example21.js" target="_blank">Promise.race()</a></li>
+				</ul>
+			</div>
+			<pre>
+        <code>
+&lt;promise&gt;
+/* 1 
+비동기 작업
+*/
+console.log(Promise);
+//[Function: Promise] 전역 객체로 들어와 있다.
+
+
+/* 2
+생성자를 통해서 프로미스 객체를 만들 수 있다.
+생성자의 인자로 excutor라는 함수를 이용한다.
+*/ 
+
+new Promise(/*excutor = 함수가 들어올 자리 */);
+
+
+/* 3
+excutor 함수는 resolve와 reject를 인자로 가집니다.
+    (resolve, reject)=> {...}
+resolve와 reject는 함수입니다
+    resolve(), reject()
+*/
+new Promise (/* excutor */ (resolve, reject)=>{});
+
+
+/* 4
+생성자를 통해서 프로미스 객체를 만드는 순간 pending(대기) 상태라고 합니다.
+*/ 
+
+new Promise((resolve,reject)=>{}); //pending
+
+
+/* 5
+excutor 함수 인자 중 하나인 resolve 함수를 실행하면, fulfilled(이행) 상태가 됩니다.
+*/ 
+
+new Promise((resolve,reject)=>{
+    // 객체 생성이되면 pending 상태
+    // 비동기 처리 상황
+
+    // 끝났을 때
+    resolve(); // fullfilled 상태
+});
+
+
+/* 6
+executor 함수 인자 중 하나인 reject 함수를 실행하면, rejected(거부) 상태가 됩니다.
+*/
+
+new Promise((resolve,reject) => {
+    reject(); // rejected 상태
+});
+
+
+/*  7
+p라는 프로미스 객체 는 1000ms 후에 fulfilled 됩니다.
+*/
+
+new Promise((resolve,reject)=>{
+    /* pending */
+    setTimeout(() =>{
+        resolve(); /* fulfilled */
+    }, 1000);
+});
+
+
+/* 8
+p라는 프로미스 객체가 fulfilled 되는 시점에 p.then 안에 설정한 callback 함수가 실행됩니다.
+*/
+
+const p = new Promise((resolve,reject)=>{ // 함수로 지정
+    /* pending */
+    setTimeout(() =>{
+        resolve(); /* fulfilled */
+    }, 1000);
+});
+
+p.then(()=>{ /* callback */
+    //resolve(); 후에 실행되는것 , 1초 후에 시작 함
+
+})
+
+// const q = new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         resolve();
+//     }, 1000);
+// })
+
+// q.then(()=>{
+//     resolve();
+// });
+
+
+/* 9
+p라는 프로미스 객체가 fulfilled 되는 시점에 p.then 안에 설정한 callback 함수가 실행됩니다.
+*/
+
+const p = new Promise((resolve,reject)=>{
+    /* pending */
+    setTimeout(() =>{
+        resolve(); /* fulfilled */
+    }, 1000);
+});
+
+p.then(()=>{ /* callback */
+    //resolve(); 후에 실행되는것 , 1초 후에 시작 함
+
+})
+
+
+const p = new Promise((resolve,reject)=>{
+    /* pending */
+    setTimeout(() =>{
+        resolve(); /* fulfilled */
+    }, 1000);
+});
+
+p.then(()=>{ /* callback */
+    console.log('1000ms 후에 fulfilled 됩니다.');
+})
+
+
+/* 10
+then을 설정하는 시점을 정확히하고,
+함수의 실행과 동시에 프로미스 객체를 만들면서 pending이 시작하도록 하기 위해
+프로미스 객체를 생성하면서 리턴하는 함수 (p)를 만들어 함수 (p) 실행과 동시에 then을 설정합니다
+*/
+
+
+// p 함수가 호출 될때 Promise 객체가 만들어지고 return함
+function p(){
+    return new Promise((resolve,reject)=>{ //Promise 객체가 만들어지는 순간
+        /* pending */
+        setTimeout(() =>{
+            resolve(); /* fulfilled */
+        }, 1000);
+    });
+}
+ 
+p().then(()=>{ //fulfilled 상태일 때 실행할 
+    console.log('1000ms 후에 fulfilled 됩니다❤');
+})
+    
+
+/* 11
+마찬가지로 프로미스 객체가 rejected 되는 시점에 p.catch 안에 설정한 callback 함수가 실행됩니다.
+*/
+
+function p(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            //resolve();
+            reject(); /* rejected 호출이 거부되는 상태 */
+        }, 10000);
+    })
+}
+
+p()
+    .then(()=>{// 비동기 함수가 성공적으로 임무를 완수 했을 때
+        console.log('1초 후 fulfilled❤ 됩니다.');
+    })//체이닝 가능
+    .catch(()=>{ // 비동기 함수가 임무를 진행하다 잘못됬다고 알려줄 때
+        console.log('1초 후 rejected❤ 됩니다.'); // 1초 후에 rejected 됨
+    });
+
+
+/* 12
+excutor 의 resolve 함수를 실행 할 때 인자를 넣어 실행하면(fulfilled 상태로 바꿀 때),  then의 callback 함수의 인자로 받을 수 있습니다.
+    resolve('hello');
+    then((message)=>{...})
+*/
+
+/* 
+비동기 => 원격에 있는 데이터를 가져올 때 사용, 
+원격으로 요청 후 정상적으로 받았을 때 받아온 데이터를 then으로 데이터를 주고 UI를 받아올 때 쓰임
+*/
+function p(){
+    return new Promise((resolve,reject)=>{
+        /* pending */
+        setTimeout(()=>{
+            resolve('aion');// 객체, 메세지(문자열) 담아 보낼 수 있음
+            //reject();
+        }, 1000);
+    })
+}
+
+p()
+    .then(message => {
+        console.log('1초 후 fulfilled❤ 됩니다.', message);
+    })
+    .catch(() => {
+        console.log('1초 후 rejected❤ 됩니다.');
+    });
+
+
+
+/* 13
+마찬가지로, executor 의 reject 함수를 실행할 떄 인자를 넣어 실행하면, catch의 callback 함수의 인자로 받을 수 있다.
+reject('error');
+then((reason)=>{...})
+*/
+
+function p() {
+    return new Promise((resolve, reject)=>{
+        /* pending */
+        setTimeout(()=>{
+            //resolve('연결 성공');
+            reject('네트워크 error로 실패');
+        }, 1000);
+    });
+}
+
+p()
+    .then(message => {
+        console.log('1초 후 fulfilled❤ 됩니다.', message);
+    })
+    .catch(reason => {
+        console.log('1초 후 rejected❤ 됩니다.', reason);
+    })
+
+
+/* 14
+보통 reject 함수를 실행하며 reject 함수를 실행할 때 인자를 넣어 실행하면, catch의 callback 함수의 인자로 받을 수 있습니다.
+reject('error');
+then((reason)=>{...})
+*/
+
+
+function p() {
+    return new Promise((resolve, reject)=>{
+        /* pending */
+        setTimeout(()=>{
+            //resolve('연결 성공');
+            reject(new Error('bad')); //에러객체
+        }, 1000);
+    });
+}
+
+p()
+    .then(message => {
+        console.log('1초 후 fulfilled❤ 됩니다.', message);
+    })
+    .catch(error => {
+        console.log('1초 후 rejected❤ 됩니다.', error);
+    })
+
+
+/* 15
+fullfilled 되거나 rejected된 후에 최종적으로 실행할 것이 있다면, .finally()를 설정하고 함수를 인자로 넣습니다.
+*/
+
+function p(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            reject(new Error('bad'));
+        }, 1000);
+    });
+}
+
+p()
+    .then( message =>{
+        console.log('1초 후 fulfilled❤ 됩니다.', message);
+    })
+    .catch( error =>{
+        console.log('1초 후 rejected❤ 됩니다.', error);
+    })
+    .finally(()=>{
+        console.log('end');
+    });
+
+
+/* 16
+콜백 헬 : 함수가 아래로 진행되지 않고 callback 안으로 중첩
+보통 비동기 작업을 할 때, callback 함수를 인자로 넣어 로직이 끝나면 callback 함수를 호출 합니다.
+이런 경우 함수가 아래로 진행되지 않고, callback 함수 안으로 진행됩니다.
+*/
+
+//비동기 작업을 callback으로 할 때
+function c(callback){ //인자
+    setTimeout(()=>{
+        callback();
+    }, 1000);
+};
+//한번의 콜백을 받는다 
+c(() => {
+    // 끝나면 진행 할 함수 
+    console.log('1000ms 후 callback 함수가 됩니다.');
+});
+//두번째 callback 
+c(() => {
+    c(() => { //2초 후
+        console.log('2000ms 후 callback 함수가 됩니다.');
+        c(() => { //3초 후
+            // 끝나면 진행 할 함수 
+            console.log('3000ms 후 callback 함수가 됩니다.');
+        });
+    });
+});
+
+
+/* 17 
+then 함수에서 다시 프로미스 객체를 리턴하는 방법을 통해 체이닝하면. 비동기 작업을 순차적으로 아래로 표현 가능
+then에서 함수를 넣는 여러 방법을 확인해 봅시다.
+*/
+
+function p() {
+    //Promise 객체를 리턴
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve();
+        }, 1000);
+    });
+}
+
+p()//pending상태 
+.then(() => {
+    return p();// 새로운 promise 개체를 만들어 return
+})
+//이후 또 작업을 원한다면 2초후 
+.then(() => p()) //arrow function은 중괄호 생략 가능하니 이렇게 하면 똑같은 결과
+// 3초후 
+.then(p)
+.then(()=>{
+    console.log('4000ms 후 fulfilled 됩니다.')
+})
+
+
+/* 18
+value가 프로미스 객체인지 아닌지 알 수 없는 경우, 사용하면 연결된 then 메서드를 실행합니다.
+value가 프로미스 객체면, resolve 된 then 메서드를 실행합니다.
+value가 프로미스 객체가 아니면, value를 인자로 보내면서 then 메서드를 실행합니다.
+*/
+
+//Promise.resolve 프로미스 객체O
+//프로미스라는 전역 객체의 resolve라고 하는 함수를 실행하며 promise 만들어 내는 것
+Promise.resolve(/* value / 인자 1. promise 객체 2. 일반 값 */);
+
+Promise.resolve(new Promise((/*excutor*/resolve, reject) => { //프로미스 객체를 resolve의 인자인 value에 넣어주는 것 
+    setTimeout(()=>{
+        resolve('foo');
+    }, 1000);
+})).then((data)=>{ // 프로미스 객체를 resolve 시킨 후에 then 부름 
+    console.log('프로미스 객체인 경우, resolve 된 결과를 받아 then이 실행 됩니다.', data);
+});
+
+// 프로미스 객체X
+Promise.resolve('bar').then(data => { //bar value =>문자열
+    console.log('then 메서드가 없는 경우, fullfilled 됩니다.', data);
+});
+
+
+/* 19
+Promise.reject 를 사용하면, catch로 연결된 rejected 상태로 변경됩니다.
+*/
+
+Promise.reject(/* value */);
+
+Promise.reject(new Error('reason'))
+    .then(error => {})
+    .catch(error => {
+        console.log(error);
+    });
+
+
+/* 20
+프로미스 객체 여러개를 생성하여,
+배열로 만들어 인자로 넣고 Promise.all을 실행하면,
+배열의 모든 프로미스 객체들이 fulfilled 되었을 떄, then의 함수가 실행됩니다.
+then의 함수 인자로 프로미스 객체들의 resolve 인자값을 배열로 돌려줍니다.
+*/
+
+//Promise.all([프로미스 객체들]);
+
+function p(ms){ //밀리세컨즈 fulfilled상태
+    return new Promise((resolve, reject) => {
+        /* pending 상태 */
+        setTimeout(() => {
+            resolve(ms);
+        }, ms); //인자로 받은 ms 후에 resolve
+    })
+}
+
+Promise.all([p(1000), p(2000), p(3000), p(4000), p(5000)]).then(messages => {
+    console.log('모두 fulfilled된 이후에 실행됩니다❤', messages);
+})
+
+
+/* 21
+프로미스 객체 여러개를 생성하여,
+배열로 만들어 인자로 넣고 Promise.race를 실행하면,
+배열의 모든 프로미스 객체들 중 가장 먼저 fulfilled 된 것으로, then의 함수가 실행됩니다.
+then의 함수의 인자로 가장 먼저 fulfilled 된 프로미스 객체의 resolve 인자값을 돌려줍니다.
+*/
+
+//Promise.race([프로미스 객체들]);
+
+function p(ms){ //밀리세컨즈 fulfilled상태
+    return new Promise((resolve, reject) => {
+        /* pending 상태 */
+        setTimeout(() => {
+            resolve(ms);
+        }, ms); //인자로 받은 ms 후에 resolve
+    })
+}
+
+Promise.race([p(1000), p(2000), p(3000), p(4000), p(5000)]).then(message => {
+    console.log('가장 빠른 하나가 fulfilled된 이후에 실행됩니다❤', message);
+})
+        </code>
+    </pre>
+
+			<div class="code-info">
+				<h2><strong>Async/await</strong></h2>
+				<ul class="code-list">
+					<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/async_function" target="_blank">async_function</a></li>
+					<li>async function 함수이름(){}</li>
+					<li>const 함수이름 = async() => {}</li>
+					<li><a href="./async/example1.js" target="_blank">promise 객체를 리턴</a></li>
+					<li><a href="./async/example2.js" target="_blank">async함수로 전역 감싸기(resolve)</a></li>
+					<li><a href="./async/example3.js" target="_blank">reject try catch</a></li>
+					<li><a href="./async/example4.js" target="_blank">async function 자체를 사용하는 방법</a></li>
+					<li><a href="./async/example5.js" target="_blank">async function return, Promise.resolve</a></li>
+					<li><a href="./async/example6.js" target="_blank">error의 전파</a></li>
+					<li><a href="./async/example7.js" target="_blank">finally</a></li>
+					<li><a href="./async/example8.js" target="_blank">연속된 promise or async await로 되는 처리</a></li>
+					<li><a href="./async/example9.js" target="_blank">Promise.all, Promise.race</a></li>
+				</ul>
+			</div>
+			<pre>
+        <code>
+/* 1 */
+// Promise 객체를 리턴하는 함수
+function p(ms){
+    return new Promise((resolve, reject) => {
+        //비동기
+        setTimeout(() =>{
+            resolve(ms);
+        }, ms);
+    })
+}
+
+// Promise 객체를 이용해서 비동기 로직을 수행할 떄
+p(1000).then(ms =>{ //비동기 끝나면 일어나는 
+    console.log(`${ms} ms 후에 실행된다★`);
+})
+
+// Promise 객체를 리턴하는 함수를 await로 호출하는 방법
+//await p(1000); // then으로 가지 않고 정상적으로 실행 됬을때 async가 ms값으로 옴
+const ms = await p(1000); //전역
+console.log(`${ms} ms 후에 실행된다★★`);
+
+//실제로는 비동기적인 처리로 보냈지만 함수가 끝날때 까지 다음줄로 넘어가지않고, 기다렸다가 resolve 되면 인자값을 return해서 밑으로 이어짐 
+// 전역이 async로 감싸져 있지 않아서 에러뜸
+
+
+/* 2 */
+// await를 사용하는 경우, 항상 async 함수 안에서 사용되어야 한다.
+
+function p(ms){
+    return new Promise((resolve, reject) =>{
+        setTimeout(()=>{
+            resolve(ms);
+        }, ms);
+    });
+}
+
+//- 메인 함수를 호출하면 실행 
+// async function main(){
+//     const ms = await p(1000);
+//     console.log(`${ms} ms 후에 실행된다★★`);
+// }
+
+// main();
+
+//- 즉시실행 함수 호출 
+(async function main(){ //만들자마자 실행되는 함수기 때문에 이렇게 해도 상관이 없다
+    const ms = await p(1000); //await가 있으면 비동기 처리가 끝날 때 까지 기다렸다가 값(인자)를 넘겨서 밑으로 진행됨
+    console.log(`${ms} ms 후에 실행된다★★`);
+})();
+
+
+/* 3 */
+// Promise 객체가 rejected 된 경우의 처리를 위해
+// try catch를 이용한다.
+
+function p(ms) {
+    return new Promise((resolve, reject) =>{
+        setTimeout(() =>{
+            // resolve(ms);
+            reject(new Error('reason'));
+        }, ms);
+    })
+}
+
+// async 즉시실행(resolve = 정상적으로 끝났다.)
+(async function main() {
+    try{
+        const ms = await p(1000);
+        // 정상적인 처리인 경우 여기서 실행, 처리
+    } catch(error) { //new Error reason
+        console.log(error, `${error} 실행실패★★`);
+    }
+})();
+
+
+/* 4 */
+// async function에서 return 되는 값은 Promise.resolve 함수로 감싸서 리턴된다.
+
+function p(ms) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject(new Error('reason'));
+        }, ms);
+    })
+}
+
+// async 붙은 함수는 return 되는 값에 Promise.resolve가 감싸서 리턴된다
+async function asyncP() {
+    return 'Mark';// 문자열 리턴
+}
+
+(async function main() {
+    try{
+        //resolve
+        const name = await asyncP();
+        console.log(name);
+    } catch {
+        //reject
+        console.log(error, `${error} 실행실패★★`);
+    }
+})();
+
+
+/* 5 */
+// async function에서 return 되는 값은 Promise.resolve 함수로 감싸서 리턴된다.
+
+function p (ms) {
+    return new Promise((resolve, reject) =>{
+        setTimeout(() =>{
+            resolve(ms);
+            //reject(new Error('reason'));
+        }, ms);
+    })
+}
+
+//
+async function asyncP(){
+    const ms = await p(2000); //new promise 리턴-> reject, resolve 중 하나 불릴 때 까지 
+    return ms + '후에 Promise.resolve로 감싸져서 리턴됩니다.';
+}
+
+(async function main(){
+    try{
+        const name = await asyncP(); //비동기 처리 끝나면 밑으로
+        console.log(name);
+    } catch {
+        //reject
+        console.log(error, `${error} 실행실패★★`);
+    }
+})();
+
+
+/* 6 */
+// error의 전파
+
+function p (ms) {
+    return new Promise((resolve, reject) =>{
+        setTimeout(() =>{
+            // resolve(ms);
+            reject(new Error('reason'));
+        }, ms);
+    })
+}
+
+//
+async function asyncP(){
+    const ms = await p(2000); //에러 발생
+    return ms + '후에 Promise.resolve로 감싸져서 리턴됩니다.';
+}
+
+(async function main(){
+    try{
+        const name = await asyncP(); //비동기 처리 끝나면 밑으로
+        console.log(name);
+    } catch(error) {
+        //reject
+        console.log(error, `${error} 실행실패★★`);
+    }
+})();
+
+/* 2초 있다가
+Error: reason
+    at Timeout._onTimeout (C:\Users\시대학원\Desktop\Javascript\async\example6.js:7:20)
+    at listOnTimeout (internal/timers.js:555:17)
+    at processTimers (internal/timers.js:498:7) Error: reason 실행실패★★
+*/
+
+
+
+/* 7 */
+//finally
+
+function p (ms) {
+    return new Promise((resolve, reject) =>{
+        setTimeout(() =>{
+            resolve(ms);
+            // reject(new Error('reason'));
+        }, ms);
+    })
+}
+
+//
+async function asyncP(){
+    const ms = await p(2000); //에러 발생
+    return ms + '후에 Promise.resolve로 감싸져서 리턴됩니다.';
+}
+
+(async function main(){
+    try{
+        const name = await asyncP(); //비동기 처리 끝나면 밑으로
+        console.log(name);
+    } catch(error) {
+        //reject
+        console.log(error, `${error} 실행실패★★`);
+    } finally { //마지막에 찍힘
+        console.log('end');
+    }
+})();
+
+
+/* 8 */
+function p(ms) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(ms);
+        }, ms)
+    })
+}
+
+// Promise -> 계속 만들어서 return해서 체이닝
+p(1000)
+    .then(() => p(1000))
+    .then(() => p(1000))
+    .then(ms => {  // 1초씩 더 연결하는 체이닝 처리
+        console.log( `${ms * 3} ms 후에 실행`);
+    });
+
+// async await -> 한줄 한줄이 비동기가 끝나면 진행이된다
+(async function main() {
+    const ms = await p(1000);
+    await p(1000);
+    await p(1000);
+    console.log( (ms * 3) + `ms 후에 실행`);
+})();
+
+
+/* 9 */
+function p(ms) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(ms);
+        }, ms)
+    })
+}
+
+// Promise.all
+// (async function main(){ // 배열로 값이 넘어옴
+//     const results = await Promise.all([p(1000), p(2000), p(3000), p(4000)]);
+//     console.log(results);
+// })();
+
+// Promise.race
+(async function main(){ // 배열로 값이 넘어옴
+    const result = await Promise.race([p(1000), p(2000), p(3000), p(4000)]);
+    console.log(result);
+})();
+
+
+        </code>
+    </pre>
+			<!-- 
+    <div class="code-info">
+        <h2><strong></strong></h2>
+        <ul class="code-list">
+            <li></li>
+        </ul>
+    </div>
+    <pre>
+        <code>
+        </code>
+    </pre>
+-->
+		</div>
+	</body>
+</html>
