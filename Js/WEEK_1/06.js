@@ -44,6 +44,13 @@ let a = 10;
 a *= 2;
 console.log(a);
 
+// 6-5. 나머지 등호 연산자(%=)
+x = 10;
+console.log(x); // 10
+
+x %= 3;
+console.log(x); // 1
+
 // * 비교 연산자(--> true or false 반환하는 연산자)
 // 1. 일치 연산자(===)
 // 타입까지 일치해야 true를 반환함
