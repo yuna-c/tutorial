@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>button</title>
+
+    <!-- S : CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- // E : CSS -->
+
+    <!-- S : JS -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- // E : JS -->
+
+    <style>
+        .container{ margin-top:50px; }
+    </style>
+</head>
+<body>
+    <div class="container" style="padding-top:50px;">
+        <div class="row">
+            <div class="col-lg-12">
+                <a href="javascipt:void(0);" class="btn btn-default">default</a>
+                <a href="javascipt:void(0);" class="btn btn-primary">primary</a>
+                <a href="javascipt:void(0);" class="btn btn-success">success</a>
+                <a href="javascipt:void(0);" class="btn btn-info">info</a>
+                <a href="javascipt:void(0);" class="btn btn-warning">warning</a>
+                <a href="javascipt:void(0);" class="btn btn-danger">danger</a>
+                
+                <!-- S : Toggle -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Action <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                    </ul>
+                </div>
+                <!--// E : Toggle -->
+
+            </div>
+        </div>
+       
+    </div>
+
+    <script>
+         $(document).ready(function(){
+            $(".dropdown-toggle").dropdown();
+        });
+    </script>
+</body>
+</html>

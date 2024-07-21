@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bootstrap</title>
+
+    <!-- S : CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- // E : CSS -->
+
+    <!-- S : JS -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- // E : JS -->
+
+    <style>
+        .container{ margin-top:50px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- S : nav -->
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+
+                    <!-- S : 버튼 -->
+                    <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#nav_menu" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span> 
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- // E : 버튼 -->
+
+                    <a class="navbar-brand" href="javascript:void(0);">
+                        bootstrap강의
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="nav_menu">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="javascript:void(0)">HTML</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">PYTHON</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">JAVACRIPT</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">PHP</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--// E : nav -->
+
+        <!-- S : container -->
+        <div class="col-sm-2">
+            <!-- S : side -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        게시판
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <a href="javascript:void(0);">자유게시판</a><br>
+                    <a href="javascript:void(0);">포럼</a><br>
+                    <a href="javascript:void(0);">News</a>
+                </div>
+            </div>
+            <!--// E : side -->
+        </div>
+
+        <div class="col-sm-10">
+            <!-- S : table -->
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th>제목</th>
+                    <th>작성일</th>
+                    <th>삭제</th>
+                </tr>
+                <tr>
+                    <td>안녕하세요안녕하세요안녕하세요안녕하세요</td>
+                    <td>2021-09-27</td>
+                    <td>
+                        <a href="jvascript:void(0);" class="btn btn-danger">삭제</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>안녕하세요안녕하세요안녕하세요안녕하세요</td>
+                    <td>2021-09-27</td>
+                    <td>
+                        <a href="jvascript:void(0);" class="btn btn-danger">삭제</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>안녕하세요안녕하세요안녕하세요안녕하세요</td>
+                    <td>2021-09-27</td>
+                    <td>
+                        <a href="jvascript:void(0);" class="btn btn-danger">삭제</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>안녕하세요안녕하세요안녕하세요안녕하세요</td>
+                    <td>2021-09-27</td>
+                    <td>
+                        <a href="jvascript:void(0);" class="btn btn-danger">삭제</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>안녕하세요안녕하세요안녕하세요안녕하세요</td>
+                    <td>2021-09-27</td>
+                    <td>
+                        <a href="jvascript:void(0);" class="btn btn-danger">삭제</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>안녕하세요안녕하세요안녕하세요안녕하세요</td>
+                    <td>2021-09-27</td>
+                    <td>
+                        <a href="jvascript:void(0);" class="btn btn-danger">삭제</a>
+                    </td>
+                </tr>
+            </table>
+            <!--// E : table -->
+
+            <a href="javascript:void(0);" class="btn btn-success">작성하기</a>
+
+            <!--S : pagenation -->
+            <nav class="text-center">
+                <ul class="pagination">
+                  <li>
+                    <a href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="active"><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">4</a></li>
+                  <li><a href="#">5</a></li>
+                  <li>
+                    <a href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+            <!--// E : pagenation -->
+            
+        </div>
+        <!--// E : container -->
+    </div>
+</body>
+</html>

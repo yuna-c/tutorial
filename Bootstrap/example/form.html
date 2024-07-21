@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bootstrap</title>
+
+    <!-- S : CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- // E : CSS -->
+
+    <!-- S : JS -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- // E : JS -->
+
+    <style>
+        .container{ margin-top:50px; }
+        li{ margin-bottom:20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li class="form-inline">
+                <label for="">아이디</label> :
+                <input type="text" class="form-control">
+            </li>
+            <li class="form-inline">
+                <label for="">패스워드</label> :
+                <input type="password" class="form-control">
+            </li>
+            <li class="form-inline">
+                <label for="">생년월일</label> :
+                <select name="" id="" class="form-control">
+                    <option value="">년도</option>
+                    <option value="">1991</option>
+                    <option value="">1992</option>
+                </select>
+                -
+                <select name="" id="" class="form-control">
+                    <option value="">월</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                </select>
+                -
+                <select name="" id="" class="form-control">
+                    <option value="">일</option>
+                    <option value="">01</option>
+                    <option value="">02</option>
+                </select>
+            </li>
+            <li class="form-inline">
+                <input type="checkbox" id="agree">
+                <label for="agree">
+                    약관에 동의하시겠습니까?
+                </label>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
