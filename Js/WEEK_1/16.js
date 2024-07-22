@@ -50,3 +50,55 @@ console.log('2 => ', fruits); // 2 =>  [ '망고', '복숭아', '오렌지' ]
 fruits = ['사과', '바나나', '오렌지'];
 let slicedFruits = fruits.slice(1, 3);
 console.log(slicedFruits); // [ '바나나' , '오렌지']
+
+// forEach , map, filter, find
+
+// 3-7. forEach() 메소드
+numbers = [3, 1, 5, 4, 2];
+// 매개변수 자리에 함수를 넣는 것 : 콜백 함수
+// numbers.forEach([매개변수 -> function (인수 item) {}]);
+numbers.forEach(function (item) {
+	console.log('item => ', item);
+	// item =>  3
+	// item =>  1
+	// item =>  5
+	// item =>  4
+	// item =>  2
+});
+
+// 3-8. map() 메소드 : 반드시 return문
+// 기존의 배열을 가공해서 새로운 배열 만듬
+// 항상 원본 배열의 길이만큼이 return 된다
+let newNumbers = numbers.map(function (item) {
+	return item * 2; // 가공할 값
+	// map =>  [ 6, 2, 10, 8, 4 ]
+	// !retrun [undifiend, undifiend, undifiend, undifiend, undifiend]
+});
+console.log('map => ', newNumbers);
+
+// 3-9. filter() 메소드 : 반드시 return문, 조건에 맞는 것 만 반환
+let filteredNum = numbers.filter(function (item) {
+	// return item !== 5;
+	// === 5 filter =>  [ 5 ]
+	// !== 5 filter =>  [ 3, 1, 4, 2 ]
+	return item > 3;
+	// filter =>  [ 5, 4 ]
+});
+console.log('filter => ', filteredNum);
+
+// 3-10. find() 메소드 : 조건에 맞는 것 첫번째 요소 한개만 반환
+let findNum = numbers.find(function (item) {
+	return item < 3;
+	// find =>  1
+});
+console.log('find => ', findNum);
+
+// 3-11. reduce() 메소드
+
+// 3-12. some() 메소드
+
+// 3-13. every() 메소드
+
+// 3-14. sort() 메소드
+
+// 3-15. reverse() 메소드
