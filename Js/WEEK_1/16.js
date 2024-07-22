@@ -93,12 +93,44 @@ let findNum = numbers.find(function (item) {
 });
 console.log('find => ', findNum);
 
+//  reduce, find, some, every, sort, reverse
 // 3-11. reduce() 메소드
+let numbers2 = [1, 2, 3, 4, 5];
+
+let sum = numbers2.reduce(function (accumulator, currentValue) {
+	return accumulator + currentValue; // 15
+}, 0);
+
+console.log(sum);
 
 // 3-12. some() 메소드
+// some() 메소드는 배열의 각 요소에 대해 콜백 함수를 실행하고, 그 결과가 true인 요소가 하나라도 있는지 확인
+numbers2 = [1, 2, 3, 4, 5];
+
+let hasEvenNumber = numbers2.some(function (number) {
+	return number % 2 === 0;
+});
+
+console.log(hasEvenNumber); // true
 
 // 3-13. every() 메소드
+// 배열 numbers의 모든 요소가 짝수인지 확인, 배열의 각 요소에 대해 콜백 함수를 실행하고, 그 결과가 true인 요소가 모든 요소인지 확인
+let number3 = [2, 4, 6, 8, 10];
+
+let isAllEvenNumbers = number3.every(function (number) {
+	return number % 2 === 0;
+});
+
+console.log(isAllEvenNumbers); // true
 
 // 3-14. sort() 메소드
+numbers3 = [1, 2, 3, 4, 5];
+numbers3.reverse();
+console.log(numbers3); // [5, 4, 3, 2, 1]
 
 // 3-15. reverse() 메소드
+// reverse() 메소드를 사용하여 배열 numbers의 순서를 뒤집음
+// reverse() 메소드는 배열의 요소를 역순으로 정렬
+number3 = [1, 2, 3, 4, 5];
+numbers.reverse();
+console.log(numbers3); // [5, 4, 3, 2, 1]
