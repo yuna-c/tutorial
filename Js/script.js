@@ -137,6 +137,10 @@ function test(name) {
 }
 
 function test2(name) {
-	name && console.log(name + '님 반갑습니다.');
+	let defaultName = '아무개';
+
+	//&&연산자뒤에 대입연산자가 들어올수 없으므로 (대입연산구문을 괄호처리해서 그룹화)
+	!name && (name = defaultName);
+	console.log(name + '님 반갑습니다.');
 }
-test2('김판섭');
+test2('홍길동');
