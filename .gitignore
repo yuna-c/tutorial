@@ -1,2 +1,3 @@
+# touch .gitignore 파일 생성
 node_modules/
 package.json
