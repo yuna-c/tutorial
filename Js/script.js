@@ -8,11 +8,23 @@
   : 이름을 붙인 함수 
 
     => 기명함수 function name(){}
-    
+
   매개변수(parameter), 인수(argument)
   : 매개변수 - 외부의 같은 함수내부로 전달하기 위한 통로명
   : 인수 - 함수의 매개변수를 통해서 전달되는 값 자체 
   
+  반환값 (return)
+  : 함수 내부에서 만들어진 값을 함수외부로 물리적으로 내보냄
+  : 함수 코드블록안에서 만들어진 값은 외부에서 접근 불가 (지역스코프)
+  
+  반환값이 필요한 이유
+  : 함수내부에서 만들어진 값이 1회성으로 소비되는 것이 아닌
+  : 추후 다른 형태로 재사용이 되야될때 함수외부로 값을 내보냄
+
+  return의 다른 쓰임
+  : 함수내부에서 return문을 만나면 그 즉시 함수실행 종료
+  : 함수내부로직에서 에러가 발생될만한 상황이면 불필요하게 다음 코드들을 실행하지 않고 
+  : 해당 함수를 강제 종료해야 될때
 */
 
 // 함수의 정의 (name이라는 [매개변수]가 연결되어 있는 함수)
@@ -48,3 +60,20 @@ function plus(num1, num2) {
 }
 
 plus(2, 3);
+
+//함수 호출
+console.log(plus(2, 3));
+
+function returnPlus(num1, num2) {
+	const result = num1 + num2;
+	return result;
+}
+
+//리턴값이 있는 함수 호출
+console.log(returnPlus(2, 3));
+
+//2,3을 더한값과 4,5를 더한값을 다시 더해주세요.
+const result1 = returnPlus(2, 3);
+const result2 = returnPlus(4, 5);
+console.log(result1 + result2);
+console.log(returnPlus(2, 3) + returnPlus(4, 5));
