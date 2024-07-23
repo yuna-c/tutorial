@@ -1,46 +1,34 @@
 /*
-  반복문 - 여러번 반복되는 특정코드를 자동반복처리
-  내장함수 - 이미 시스템에 정의되어 있는 함수
-  for(자바스크립트 기본내장함수), forEach, map(배열전용 내장함수)
-*/
+  배열반복 (forEach, map)
+  callback: 함수에 인수로 전달되는 함수
+  high order function(hof:고차함수): 인수로 함수를 받거나 혹은 리턴값으로 함수를 내보내는 부모함수
 
-//for문 패턴 :  for(초기값; 반복범위; 반복방식){반복될코드}
-/*
-  for (let i = 1; i <= 100; i++) {
-    console.log(i);
-  }
-*/
+  배열.forEach(함수);
+  -- 반복기능만 있음
+  -- 유사배열도 반복가능 (DOM요소 반복가능)
 
-//for문으로 배열 반복처리
-/*
-  for (let i = 0; i < colors.length; i++) {
-    console.log(colors[i]);
-  }
+  배열.map(함수);
+  -- 반복기능 추가로 기존 배열값을 복사해서 리턴
+  -- 순수배열만 반복가능 (DOM요소 반복 불가능)
 */
 
 const colors = ['red', 'green', 'blue'];
-//forEach로 반복처리
-//forEach안쪽에 함수를 인수로 전달
-//forEach안쪽에 인수로 전달되는 매개변수로는 다음의 값들이 자동 전달됨
 
-//첫번째 인수(현재 반복도는 배열의 각 데이터 값)
-//두번째 인수(현재 반복도는 순번)
-//세번째 인수(반복도는 원본 배열값 전체)
-/*
-  colors.forEach(function (data, index, arr) {
-    console.log('data', data);
-    console.log('index', index);
-    //console.log('arr', arr);
-  });
-*/
+colors.forEach((data, index) => {
+	console.log('첫번째 인수활용', data);
+	console.log('두번째 인수활용', colors[index]);
+	console.log('---------');
+});
 
-const names = ['홍길동', '김판섭', '박영철'];
-//배열값을 인수로 받아서 누구님 반갑습니다 라는 콘솔문을 자동 반복해주는 함수 생성
+//반복기능만 있고 기존 배열 복사기능이 없음
+const newColors = colors.forEach((data, index) => {
+	return data + index;
+});
 
-function intro(arr) {
-	arr.forEach(function (data) {
-		console.log(data + '님 반갑습니다.');
-	});
-}
+//반복기능과 더불어 기존 배열 복사기능까지 추가됨
+const newColors2 = colors.map((data, index) => {
+	return data;
+});
 
-intro(names);
+console.log(newColors);
+console.log(newColors2);
