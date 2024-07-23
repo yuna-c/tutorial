@@ -1,48 +1,25 @@
-const hour = new Date().getHours();
-console.log(hour);
-console.log(11 > hour); //false 크니까 hour이 11보다 작으면
-console.log(11 >= hour);
-// 현재 시간이 5보다 같거나 크고 그와 동시에 12보다 작을 때 true (둘다)
-console.log(hour >= 5 && hour < 12); //  hour이 5보다 같거나 크고 hour이 12보다 작으면
-// 현재 시간이 5보다 같거나 크거나 혹은 12보다 작을 때 ture (하나만)
-console.log(hour >= 5 || hour < 12);
+/*
+  배열 : 같은 성격의 여러개의 값들을 그룹화 할때 쓰는 자료형
+  const 변수명 = [값1,값2,값3];
+  배열값 뽑을 때는
+  배열이 있는 변수명[순번]; //프로그래밍 언어에서는 첫번째 순번이 1이아닌 0
+  배열을 쓰는 이유
+  : 배열로 굳이 같은 성격의 데이터를 묶어두는 이유 (반복문을 써서 자동화 처리하기 위함)
+  배열의 갯수를 구하는 방법
+  :배열명.length;
+*/
 
-// 바디 요소의 스타일 값 중 배경색의 해당하는 값을 aqua로 대입
-document.body.style.backgroundColor = 'blue';
-// document.getElementById('myDiv').style.backgroundColor = 'lightblue';
+const colors = ['red', 'blue', 'green'];
+console.log(colors[0]);
+console.log(colors.length);
+colors.push('pink');
+console.log(colors.length);
+console.log(colors[3]);
 
-//미션
-// - 현재 시간이 5~11시 사이면 body 배경색 orange 변경
-// - 현재 시간이 11~15시 사이면 body lightblue
-// - 현재 시간이 15~19시 사이면 body pink
-// - 현재 시간이 19보다 크고 5보다 작으면 사이면 body black
-
-// if (hour >= 5 && hour < 11) {
-// }
-
-//미션
-// - 현재 시간이 5~11시 사이면 body 배경색 orange 변경
-// - 현재 시간이 11~15시 사이면 body lightblue
-// - 현재 시간이 15~19시 사이면 body pink
-// - 현재 시간이 19보다 크고 5보다 작으면 사이면 body black
-
-// if (hour >= 5 && hour < 12) {
-//   document.body.style.backgroundColor = "orange";
-// }
-
-// else if (hour >= 12 && hour < 15) {
-//   document.body.style.backgroundColor = "lightblue";
-// }
-// else if (hour >= 15 && hour < 20) {
-//   document.body.style.backgroundColor = "pink";
-// }
-// else if (hour >= 15 || hour < 5) {
-//   document.body.style.backgroundColor = "black";
-// }
-
-// else {document.body.style.backgroundColor = "black";}
-
-if (hour >= 5 && hour < 12) document.body.style.backgroundColor = 'orange';
-if (hour >= 12 && hour < 15) document.body.style.backgroundColor = 'lightblue';
-if (hour >= 15 && hour < 20) document.body.style.backgroundColor = 'pink';
-if (hour >= 15 || hour < 5) document.body.style.backgroundColor = 'black';
+/*
+  변수명 작성시 주의점
+  1. 변수명 숫자로 시작 불가
+  2. 변수명 가급적 영어로
+  3. 변수명 대소문자 구분
+  4. 변수명 특수문자 불가 (_,$ 가능)
+*/
