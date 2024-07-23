@@ -7,11 +7,13 @@ console.log(btns.length);
 //버튼 클릭 이벤트문
 btns.forEach((btn, idx) => {
 	btn.addEventListener('click', (e) => {
-		// console.log(e.currentTarget.innerText);
+		//e.currentTarget : js이벤트 구문에 연결되어 있는 선택
+		//e.target : 실제 화면상에서 이벤트가 발생한 대상선택
+		//만약 연결되어있는 선택자가 a의 링크이동처럼 특정 기능이 있는 요소면 해당기능 막아야될 필요있음
+		e.preventDefault();
 		e.currentTarget.innerHTML = `<span>${e.currentTarget.innerText}</span>`;
-		//만약 클릭한 버튼에 on있다면 return으로 함수실행중지
-		//만약 클릭한 버튼에 on없다면 해당 조건문이 무시되면서 activation함수 호출
-		if (btns[idx].classList.contains('on')) return;
+
+		if (e.currentTarget.classList.contains('on')) return;
 		[btns, boxs].forEach((el) => activation(el, idx));
 	});
 });
