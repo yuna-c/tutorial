@@ -130,3 +130,13 @@ function introduce2(name) {
 }
 
 introduce('김영희');
+
+//인수값이 있을때에만 실행되는 함수를 작성시
+function test(name) {
+	if (name) console.log(name + '님 반갑습니다.');
+}
+
+function test2(name) {
+	name && console.log(name + '님 반갑습니다.');
+}
+test2('김판섭');
