@@ -1,34 +1,53 @@
 /*
-  배열반복 (forEach, map)
-  callback: 함수에 인수로 전달되는 함수
-  high order function(hof:고차함수): 인수로 함수를 받거나 혹은 리턴값으로 함수를 내보내는 부모함수
-
-  배열.forEach(함수);
-  -- 반복기능만 있음
-  -- 유사배열도 반복가능 (DOM요소 반복가능)
-
-  배열.map(함수);
-  -- 반복기능 추가로 기존 배열값을 복사해서 리턴
-  -- 순수배열만 반복가능 (DOM요소 반복 불가능)
+  기존 참조형자료는 (배열, 객체)의 변수로 복사시 원본복사가 안됨 (Shallow Copy: 얕은복사, 불변성유지 안됨)
+  - 기존배열을 단순히 변수에 옮겨담을시 
 */
-
 const colors = ['red', 'green', 'blue'];
+const newColors = colors;
+newColors[0] = 'hotpink';
 
-colors.forEach((data, index) => {
-	console.log('첫번째 인수활용', data);
-	console.log('두번째 인수활용', colors[index]);
-	console.log('---------');
-});
+//아래 콘솔 확인시 두개의 배열값 모두 변경된것을 확인
+console.log('colors', colors);
+console.log('newColors', newColors);
 
-//반복기능만 있고 기존 배열 복사기능이 없음
-const newColors = colors.forEach((data, index) => {
-	return data + index;
-});
+/*
+  전개연산자 (Spread Operator)
+  - 참조형자료를 완전복사 (Deep Copy, 불변성 유지됨)
+  - heap memory에 있는 값을 물리적으로 복사
+*/
+const interests = ['game', 'movie', 'cartoon'];
+console.log(...interests);
+const newInterests = [...interests];
+newInterests[2] = 'reading';
 
-//반복기능과 더불어 기존 배열 복사기능까지 추가됨
-const newColors2 = colors.map((data, index) => {
-	return data;
-});
+console.log('interests', interests);
+console.log('newInterests', newInterests);
 
-console.log(newColors);
-console.log(newColors2);
+const person1 = {
+	name: 'Andy',
+	age: 20,
+	address: 'seoul',
+};
+
+const person2 = { ...person1 };
+person2.age = 21;
+person2.address = 'Busan';
+
+console.log('person1', person1);
+console.log('person2', person2);
+
+//작년 회원가입정보
+const student1 = {
+	name: 'Michael',
+	age: 20,
+};
+//올해 회원가입 정보
+const extraInfo = {
+	name: 'Michael',
+	age: 21,
+	hobby: 'game',
+};
+
+//작년회원가입 정보값을 유지하면서 올해회원가입 정보값을 업데이트한 새로운 데이터 추가
+//전개연산자를 이용하면 원본을 유지하면서 기존 2개의 객체값을 합칠때 유용
+const newStudent = { ...student1, ...extraInfo };
