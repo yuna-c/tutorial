@@ -46,7 +46,7 @@ for (let i = 0; i < arr.length; i++) {
 }
 
 console.log(false || 'something'); // ?? false 뒤 값 반환
-console.log(true || 'something'); // true 앞 값 반환 trusy
+console.log(true || 'something'); // truthy : true 앞 값 반환
 console.log(false && 'something');
 /*
 || 연산자는 앞에 조건이 참일 경우 참을 반환합니다! 20대 30대는 모조리 환영하는 모임이 있다고 하면 20대임을 확인했을때 30대인지 여부를 물어볼 필요가 없겠죠? 그런데 20대가 아니면 30대인지를 한번 더 확인한다고 그런느낌으로 보시면돼요!
