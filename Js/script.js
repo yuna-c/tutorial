@@ -25,6 +25,16 @@
   : 함수내부에서 return문을 만나면 그 즉시 함수실행 종료
   : 함수내부로직에서 에러가 발생될만한 상황이면 불필요하게 다음 코드들을 실행하지 않고 
   : 해당 함수를 강제 종료해야 될때
+
+  true,false는 아니지만 true,false로 인지되는 값들
+  true로 인지되는 값들
+  :빈문자가 아닌 문자값
+  :0이 아닌 숫자값
+  false로 인지되는 값들
+  :빈문자값
+  :숫자 0
+  :undefined
+  :null
 */
 
 // 함수의 정의 (name이라는 [매개변수]가 연결되어 있는 함수)
@@ -90,7 +100,8 @@ function heavyWork(data) {
 */
 	//에러상황이 발생되서 불필요하게 코드를 실행할 필요가 없을때
 	//return을 이용해서 강제 함수실행 중지
-	if (data === undefined) return;
+	//if(data !== undefined) return;
+	if (!data) return;
 	console.log(data);
 	console.log(data);
 	console.log(data);
