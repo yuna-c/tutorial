@@ -1,25 +1,19 @@
 /*
-  배열 : 같은 성격의 여러개의 값들을 그룹화 할때 쓰는 자료형
-  const 변수명 = [값1,값2,값3];
-  배열값 뽑을 때는
-  배열이 있는 변수명[순번]; //프로그래밍 언어에서는 첫번째 순번이 1이아닌 0
-  배열을 쓰는 이유
-  : 배열로 굳이 같은 성격의 데이터를 묶어두는 이유 (반복문을 써서 자동화 처리하기 위함)
-  배열의 갯수를 구하는 방법
-  :배열명.length;
+객체(Object)
+: 여러개의 값을 그룹화 (자료구조가 복잡할 때)
 */
 
-const colors = ['red', 'blue', 'green'];
-console.log(colors[0]);
-console.log(colors.length);
-colors.push('pink');
-console.log(colors.length);
-console.log(colors[3]);
+const iphone1 = {
+	price: 1000, //프로포티
+	color: 'white', // key : value
+	isSale: false,
+};
 
-/*
-  변수명 작성시 주의점
-  1. 변수명 숫자로 시작 불가
-  2. 변수명 가급적 영어로
-  3. 변수명 대소문자 구분
-  4. 변수명 특수문자 불가 (_,$ 가능)
-*/
+// 객체 값 뽑을 때
+console.log(iphone1.price); // 객체명. 프로포티
+console.log(iphone1['color']);
+
+console.log(iphone1);
+
+iphone1.version = 'pro'; //버전 설정으로
+console.log(iphone1); // getter(획득자)와 setter(설정자)의 프로퍼티에 객체 추가 못하게 하는 거
