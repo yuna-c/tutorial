@@ -1,31 +1,48 @@
-/*
-  조건문
-  :비교연산자를 활용해서 반환되는 true, false값에 따라 코드이 분기 처리
+const hour = new Date().getHours();
+console.log(hour);
+console.log(11 > hour); //false 크니까 hour이 11보다 작으면
+console.log(11 >= hour);
+// 현재 시간이 5보다 같거나 크고 그와 동시에 12보다 작을 때 true (둘다)
+console.log(hour >= 5 && hour < 12); //  hour이 5보다 같거나 크고 hour이 12보다 작으면
+// 현재 시간이 5보다 같거나 크거나 혹은 12보다 작을 때 ture (하나만)
+console.log(hour >= 5 || hour < 12);
 
-  if(조건식1){
-    만약 조건식 1이 true면 해당 블록 코드를 실행하고 조건문 중지
-    만약 조건식 1이 false면 해당 코드블록 무시하고 다음 조건식 넘어감
-  } 
+// 바디 요소의 스타일 값 중 배경색의 해당하는 값을 aqua로 대입
+document.body.style.backgroundColor = 'blue';
+// document.getElementById('myDiv').style.backgroundColor = 'lightblue';
 
-  else if(false){
-    만약 조건식 2이 true면 해당 블록 코드를 실행하고 조건문 중지
-    만약 조건식 2이 false면 해당 코드블록 무시하고 다음 조건식 넘어감
-  } 
-  else{
-    위의 조건식들이 모두 false면 어쨋든 조건식 종료를 위해서 
-    해당구문의 코드블록을 실행하고 조건문 종료
-  }
+//미션
+// - 현재 시간이 5~11시 사이면 body 배경색 orange 변경
+// - 현재 시간이 11~15시 사이면 body lightblue
+// - 현재 시간이 15~19시 사이면 body pink
+// - 현재 시간이 19보다 크고 5보다 작으면 사이면 body black
 
-  실제 개발시 제일 많이 활용된 패턴, 
-  :조건이 여러개 있을 때 해당 구문을 반복처리 하기 위함
-  :만약 아래 조건에 부합되는 경우가 없으면 아무 코드도 실행되지 않음
-  :식이 여러 줄일 때
+// if (hour >= 5 && hour < 11) {
+// }
 
-  if(조건식1){실행할 코드블록}
-  if(조건식2){실행할 코드블록}
-  if(조건식3){실행할 코드블록}
-  //특정 조건일 때 딱 한줄의 코드만 실행되면 되고
-  
-  : 특정 조건이 아니면 아무일도 발생 시키지 않을때 중괄호도 생략사용
-  if(조건식1) 실행할 코드한줄
-*/
+//미션
+// - 현재 시간이 5~11시 사이면 body 배경색 orange 변경
+// - 현재 시간이 11~15시 사이면 body lightblue
+// - 현재 시간이 15~19시 사이면 body pink
+// - 현재 시간이 19보다 크고 5보다 작으면 사이면 body black
+
+// if (hour >= 5 && hour < 12) {
+//   document.body.style.backgroundColor = "orange";
+// }
+
+// else if (hour >= 12 && hour < 15) {
+//   document.body.style.backgroundColor = "lightblue";
+// }
+// else if (hour >= 15 && hour < 20) {
+//   document.body.style.backgroundColor = "pink";
+// }
+// else if (hour >= 15 || hour < 5) {
+//   document.body.style.backgroundColor = "black";
+// }
+
+// else {document.body.style.backgroundColor = "black";}
+
+if (hour >= 5 && hour < 12) document.body.style.backgroundColor = 'orange';
+if (hour >= 12 && hour < 15) document.body.style.backgroundColor = 'lightblue';
+if (hour >= 15 && hour < 20) document.body.style.backgroundColor = 'pink';
+if (hour >= 15 || hour < 5) document.body.style.backgroundColor = 'black';
