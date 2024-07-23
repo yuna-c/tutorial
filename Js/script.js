@@ -107,4 +107,26 @@ function heavyWork(data) {
 	console.log(data);
 }
 
-heavyWork(); //false로 인식되는 값인 (0, '', undefined, null)이 인수로 전달되면 함수 실행 종료됨
+heavyWork(''); //false로 인식되는 값인 (0, '', undefined, null)이 인수로 전달되면 함수 실행 종료됨
+
+//이름값이 인수로 전달되면 인사말출력, 이름값 미전달시 경고문 (조건문, 함수)
+function introduce(name) {
+	if (name) {
+		console.log(name + '님 반갑습니다.');
+	} else {
+		console.log('사람이름을 인수로 넣어주세요.');
+	}
+}
+introduce('홍길동');
+
+//삼항연산자 (if,else문을 3개의 항을 이용해서 간소화한 형태)
+//삼항연산자를 쓰는 경우는 조건식의 true,false값에 실행할 구문의 한줄의 간단한 구문일때
+//리액트 개발에서 JSX라는 가상돔 출력구문안에는 조건문을 3항연산자만 사용가능
+// 조건식 ? 조건식이 true일떄 실행할 구문 : 조건식이 false일때 실행할 구문
+
+//삼항연산자로 고도화시킨 함수
+function introduce2(name) {
+	name ? console.log(name + '님 반갑습니다.') : console.log('사람이름을 인수로 넣어주세요.');
+}
+
+introduce('김영희');
