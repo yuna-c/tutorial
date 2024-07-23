@@ -77,3 +77,23 @@ const result1 = returnPlus(2, 3);
 const result2 = returnPlus(4, 5);
 console.log(result1 + result2);
 console.log(returnPlus(2, 3) + returnPlus(4, 5));
+console.log(returnPlus(2, 3) + returnPlus(4, 5));
+
+//엄청로직이 무거운 함수
+function heavyWork(data) {
+	/*
+  if (data !== undefined) {
+    console.log(data);
+    console.log(data);
+    console.log(data);
+  }
+*/
+	//에러상황이 발생되서 불필요하게 코드를 실행할 필요가 없을때
+	//return을 이용해서 강제 함수실행 중지
+	if (data === undefined) return;
+	console.log(data);
+	console.log(data);
+	console.log(data);
+}
+
+heavyWork(); //false로 인식되는 값인 (0, '', undefined, null)이 인수로 전달되면 함수 실행 종료됨
