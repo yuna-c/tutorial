@@ -119,3 +119,40 @@ person.age = 31; // 변경 가능
 person.city = 'New York'; // 추가 불가
 delete person.name; // 삭제 불가
 console.log(person); // { name: 'John', age: 31 }
+
+var items = [
+	{ name: 'Edward', value: 21 },
+	{ name: 'Sharpe', value: 37 },
+	{ name: 'And', value: 45 },
+	{ name: 'The', value: -12 },
+	{ name: 'Magnetic', value: 13 },
+	{ name: 'Zeros', value: 37 },
+];
+
+// value 기준으로 정렬
+let result = items.sort(function (a, b) {
+	if (a.value > b.value) {
+		return 1;
+	}
+	if (a.value < b.value) {
+		return -1;
+	}
+	// a must be equal to b
+	return 0;
+});
+console.log(result);
+// name 기준으로 정렬
+let result2 = items.sort(function (a, b) {
+	var nameA = a.name.toUpperCase(); // ignore upper and lowercase
+	var nameB = b.name.toUpperCase(); // ignore upper and lowercase
+	if (nameA < nameB) {
+		return -1;
+	}
+	if (nameA > nameB) {
+		return 1;
+	}
+
+	// 이름이 같을 경우
+	return 0;
+});
+console.log(result2);
