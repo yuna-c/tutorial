@@ -9,6 +9,26 @@
 		<script>
 			//JSON : 데이터 전달을 목적으로 특정 언어에 종속되지 않는 문자열형태의 자바스크립트 자료 구조
 			//Javascript Object Notation
+
+			/*
+			fetch() : 실시간으로 외부데이터를 가져오는 ES6 내장함수
+			fetch자체가 반환된 데이터를 promise로 감싸서 리턴해줌
+			:결국 사용자가 promise생성을 할 필요가 없음
+			:외부데이터를 가져와야되기 때문에 시간이 걸리는 메서드고 promise를 적용할 수 밖에 없는 메서드이기 때문에 아예 기본적으로 promise기능을 내장 하고 있음
+			*/
+
+			fetch('member.json')
+				//fetch의 promise값에 대한 성공시 호출될 메서드
+				.then((data) => data.json())
+				//fetch의 promise값에 대한 실패시 호출될 메서드
+				.catch((err) => {
+					//데이터 반환에 실패시 동기적으로 실행되는 예외구문
+					console.log(err);
+				})
+				//첫번때 then구문에서 내부 json메서드가 반환한 promise에 대한 성공 호출 메서드
+				.then((json) => {
+					console.log(json);
+				});
 		</script>
 	</body>
 </html>
