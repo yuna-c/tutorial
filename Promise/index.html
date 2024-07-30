@@ -13,26 +13,29 @@
 				}, delay);
 			}
 
-			//순서1 - start콘솔출력 (callstack)
+			//수행할 미션 -start, 2초뒤에 test1 콘솔, 다시 2초뒤에 test2찍히고, 마지막 end
+			//ES5에서 callback을 통해 동기화하는 원리
+			//애초에 동기화시키고 싶은 코드를 모두 callback형태로 묶어 통채로 web api에게 넘김으로써
+			//callstack입장에서 다음에 실행할 코드들을 원천적으로 제거 하는 방법
+
+			//순서1 - start출력 (callstack)
 			console.log('start');
 
-			//순서2- test함수 호출 (callstack)
-			//순서3- setTimeout구문 외주 맡기고 다음코드 바로 실행 (callstack)
-			//순서6- setTimeout수행하고 그안쪽의 test1 콘솔문을 callstack에 전달 (web api)
-			//(이때 이미 콜스택에서 콘솔 end까지 업무가 등록된 상태이기 때문에 그 다음에 호출 대기)
+			//순서2 - 첫번째 test함수 호출 (callstack)
+			//순서3 - setTimeout을 web api에게 전달 (callstack)
 			test(2000, () => {
+				//순서4 - setTimeout호출하고 그 안쪽의 구문을 callstack에 전달 (web api)
+				//순서5 - web api로 부터 setTimeout안쪽의 callback함수 전달받고 호출 (callstack)
 				console.log('test1');
-			});
-			//순서4- 두번째 test함수 호출(callstack)
-			//순서5- setTimeout구문 외주 맡기고 다음코드 바로 실행 (callstack)
-			//순서7- setTimeout수행하고 그 안쪽의 test2 콘솔문을 callstack에 전달 (web api)
-			test(2000, () => {
-				console.log('test2');
-			});
 
-			//순서5 - end콘솔출력
-			console.log('end');
-			//실제 수행흐름 1-콘솔start, 2-콘솔end, 3-콘솔 test1, 4-콘솔 test2
+				//순서6 - 다시 두번째 test함수 호출하고 안쪽의 setTimeout을 다시 web api에게 전달 (callstack)
+				test(2000, () => {
+					//순서7 - setTimeout을 수행하고 아래쪽의 callback으로 전달된 구문을 다시 callstack에 전달 (web api)
+					//순서8 - 아래 구문을 실행하고 종료 (callstack);
+					console.log('test2');
+					console.log('end');
+				});
+			});
 		</script>
 	</body>
 </html>
