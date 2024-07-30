@@ -27,19 +27,29 @@
 		전달받은 코드가 동기적으로 수행되게하고 싶은 시점에 res를 호출 (then호출시점)
 		전달받은 코드를 기반으로 동기적으로 에러를 반환하고 싶은 시점에 rej를 호출 (catch호출 시점)
 			*/
-      function delay(time) {
+      function delay(time, isSuccess) {
         //delay내부에서 생성되는 promise인스턴스를 다시 delay함수 외부로 리턴
         //delay함수뒤에 바로 then구문을 호출하기 위함
         //then을 이어서 호출하기 위해서는 이전함수가 promise인스턴스를 반환해야됨
         return new Promise((res, rej) => {
           setTimeout(() => {
             console.log("특정로직이 성공적으로 수행되었을떄 실행할 구문");
-            res(); //해당 생성자로 생성된 인스턴객체에는 .then 메서드를 동기적으로 호출할 시점
+            //isSuccess의 상태에 따라 res, rej가 분기 호출됨
+            isSuccess ? res("sucess") /*fullfiled 실행시점*/ : rej("fail") /* rejected 실행시점 */;
           }, time);
         });
       }
 
-      delay(3000).then(() => console.log("동기적으로 실행할 코드"));
+      //promise의 변화되는 상태에 따라 then, catch 동기적으로 호출 가능
+      const p2 = delay(3000, false)
+        .then((data) => console.log(data))
+        .catch((err) => console.error(err));
+
+      /*
+    delay(3000).then(() => {
+      console.log('동기적으로 실행할 코드')
+    })
+    */
     </script>
   </body>
 </html>
