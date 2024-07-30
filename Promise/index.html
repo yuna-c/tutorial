@@ -6,6 +6,16 @@
 		<title>Document</title>
 	</head>
 	<body>
+		<main>
+			<!-- 
+			<article>
+				<div class="pic"><img></div>
+				<h2>사람이름</h2>
+				<p>직책</p>
+			</article> 
+			-->
+		</main>
+
 		<script>
 			//JSON : 데이터 전달을 목적으로 특정 언어에 종속되지 않는 문자열형태의 자바스크립트 자료 구조
 			//Javascript Object Notation
@@ -18,22 +28,15 @@
 			*/
 
 			fetch('member.json')
-				//fetch의 promise값에 대한 성공시 호출될 메서드
 				.then((data) => data.json())
-				//fetch의 promise값에 대한 실패시 호출될 메서드
-				.catch((err) => {
-					//데이터 반환에 실패시 동기적으로 실행되는 예외구문
-					console.log(err);
-				})
-				//첫번때 then구문에서 내부 json메서드가 반환한 promise에 대한 성공 호출 메서드
+				.catch((err) => console.log(err))
 				.then((json) => {
-					console.log(json);
+					console.log(json.members);
+					json.members.forEach((data) => {
+						console.log(data.name);
+						//해당 위치에서 반복돌며 위의 html구조 반복생성
+					});
 				});
-
-			fetch('member.json') //데이터 요청후 동기적으로 반환
-				.then((data) => data.json()) //반환된 데이터를 다시 json()으로 parsing해서 다시 동기적으로 반환
-				.catch((err) => console.log(err)) //데이터 반환이 실패하면 해당 구문 호출되고 종료
-				.then((json) => console.log(json)); //1번째 then구문에서 json parsing이 성공하면 동기적으로 호출
 		</script>
 	</body>
 </html>
