@@ -63,8 +63,8 @@ function2(); // "Module 2의 함수"
 // 1-3-3. 효율적인 코드 로딩
 // 필요한 기능만을 선택적으로 불러옴
 // 초기 로딩시간 단축
-// 코드 스플리팅 : 사용시 필요한 코드만 동적을 로드
-// 지연 로딩(lazy-loading) : 대규모 애플리케이션에서 성능과 자원 사용을 최적화하는 데 매우 효과적
+// 코드 스플리팅 : 사용시 필요한 코드만 동적을 로드(잘게 쪼개져 있어서 next.js)
+// 지연 로딩(lazy-loading) : 대규모 애플리케이션에서 성능과 자원 사용을 최적화하는 데 매우 효과적(필요한 코드부터 빨리 꺼내오고 나머지는 천천히)
 
 // 동적으로 모듈 로드하기 (예: 사용자가 특정 기능을 활성화했을 때)
 button.addEventListener('click', (event) => {
@@ -92,7 +92,7 @@ export default function multiply(x, y) {
 }
 
 // app.js
-import multiply from './math.js';
+import multiply from './math.js'; // 이름 변경 가능
 console.log(multiply(6, 7)); // 42
 
 // export default 시 모듈이름 변경은 자유!
