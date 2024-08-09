@@ -13,7 +13,23 @@ CRA는 기본적으로 설정을 숨기지만, Vite는 사용자가 필요에 �
 */
 
 /*
-A-Z 혼자 하기
+
+doskey ls = dir (ls 명령어로 바꾸기)
+: https://mdpapa.tistory.com/96
+: https://somjang.tistory.com/entry/Windows-%EB%AA%85%EB%A0%B9-%ED%94%84%EB%A1%AC%ED%94%84%ED%8A%B8cmd%EC%97%90%EC%84%9C-ls-clear-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
+
+vite로 리액트 프로젝트 셋업하기(cmd에서)
+yarn create vite my-react-app --template react
+yarn create vite [프로젝트명] --template react
+
+접근 및 실행
+cd my-react-app
+yarn
+yarn dev
+*/
+
+/*
+A-Z 혼자 하기(처음부터 끝까지 혼자 설정하는 것)
 
 1. 프로젝트 초기화
 mkdir my-react-app
