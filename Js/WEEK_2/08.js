@@ -25,6 +25,7 @@ console.log(myMap); //Map(0) {}
 myMap.set('key', 'value');
 console.log(myMap); //Map(1) { 'key' => 'value' }
 // key가 없으면 undefined
+// null은 명시적으로 값을 안 넣은 것
 
 // map.get(key)
 // key에 해당하는 값을 반환
